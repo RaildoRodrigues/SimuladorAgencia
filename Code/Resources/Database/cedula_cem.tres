@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cq7o0uuus7dac"]
+
+[ext_resource type="Script" path="res://Code/Resources/Prefabs/item.gd" id="1_a2ekc"]
+[ext_resource type="Texture2D" uid="uid://yj7yux2tkh5n" path="res://Art/Icons/money_100.png" id="2_bq1uy"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_a2ekc")
+code = "Cedula Cem"
+texture = ExtResource("2_bq1uy")
+category = "money"
+amount = 1
+value = 100.0

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://crgc00otmo7r5"]
+
+[ext_resource type="Script" path="res://Code/Resources/Prefabs/item.gd" id="1_i4e7b"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_i4e7b")
+code = null
+category = null
+amount = 1
+value = 0
