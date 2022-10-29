@@ -9,7 +9,7 @@ func update_drag_display(new_data):
 	data = new_data
 	if data.item:
 		%tex_icon.texture = data.item.texture
-		if data.item.amount > 1:
+		if data.item.amount > 0:
 			%lb_amount.text = str(data.item.amount)
 		else:
 			%lb_amount.text = ""
