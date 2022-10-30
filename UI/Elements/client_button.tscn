@@ -23,6 +23,7 @@ mouse_filter = 2
 script = ExtResource("1_ncb0x")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
 offset_left = 4.0
 offset_top = 2.0
 offset_right = 86.0
@@ -36,6 +37,7 @@ theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
 offset_right = 82.0
 offset_bottom = 48.0
 size_flags_horizontal = 4
@@ -44,12 +46,14 @@ mouse_filter = 2
 theme_override_constants/separation = 1
 
 [node name="MoneyClientPanel" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
 offset_right = 28.0
 offset_bottom = 48.0
 mouse_filter = 2
 
 [node name="tex_icon" type="TextureRect" parent="MarginContainer/HBoxContainer/MoneyClientPanel"]
 unique_name_in_owner = true
+layout_mode = 2
 offset_left = 2.0
 offset_right = 26.0
 offset_bottom = 24.0
@@ -60,6 +64,7 @@ texture = ExtResource("1_yvsm4")
 
 [node name="lb_value" type="Label" parent="MarginContainer/HBoxContainer/MoneyClientPanel"]
 unique_name_in_owner = true
+layout_mode = 2
 offset_top = 28.0
 offset_right = 28.0
 offset_bottom = 48.0
@@ -70,6 +75,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBoxContainer2" type="PanelContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
 offset_left = 29.0
 offset_right = 77.0
 offset_bottom = 48.0
@@ -78,6 +84,7 @@ mouse_filter = 2
 
 [node name="tex_avatar" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2i(48, 48)
+layout_mode = 2
 offset_right = 48.0
 offset_bottom = 48.0
 mouse_filter = 2
@@ -85,6 +92,7 @@ texture = ExtResource("2_wkt75")
 ignore_texture_size = true
 
 [node name="lv_order" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
 offset_left = 33.0
 offset_right = 48.0
 offset_bottom = 20.0
@@ -96,19 +104,21 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="stressbar" type="ProgressBar" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2i(4, 0)
+layout_mode = 2
 offset_left = 78.0
 offset_right = 82.0
 offset_bottom = 48.0
 size_flags_horizontal = 4
 size_flags_vertical = 1
 mouse_filter = 2
-value = 75.0
 fill_mode = 3
 show_percentage = false
 
 [node name="Interact" type="Button" parent="MarginContainer"]
 unique_name_in_owner = true
+layout_mode = 2
 offset_right = 82.0
 offset_bottom = 48.0
 disabled = true

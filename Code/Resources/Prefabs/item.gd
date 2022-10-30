@@ -2,6 +2,10 @@ class_name Item extends Resource
 
 var my_inventory : InventoryContainer
 
+signal picked(picked_slot : ItemContainer)
+signal droped(droped_slot : ItemContainer)
+
+
 @export_category('Item Identification')
 @export_placeholder('Item Name') var code : String
 @export var texture : Texture2D

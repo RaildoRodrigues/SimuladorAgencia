@@ -3,4 +3,9 @@ res://Code/Resources/Database/cedula_cem.tres
 res://Code/Resources/Database/cedula_cin.tres
 res://Code/Resources/Database/cedula_vin.tres
 res://UI/Elements/drag_preview.tscn
+res://Code/UI/client_control.gd
+res://UI/Elements/client_button.tscn
 res://Code/UI/drag_preview.gd
+res://Code/UI/ItemContainer.gd
+res://Code/UI/money_slot.gd
+res://Code/Resources/Prefabs/item.gd

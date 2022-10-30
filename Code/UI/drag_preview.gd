@@ -17,13 +17,15 @@ func update_drag_display(new_data):
 		%tex_icon.texture = null
 		%lb_amount.text = ""
 
-func return_to_slot(data):
+func return_to_slot(new_data):
+	data = new_data
 	if data and data.can_return:
 		data.item.amount += data.remain
 		data.inventory.add_item(data.item_index, data.item)
 #		
 
-func return_to_client(data):
+func return_to_client(new_data):
+	data = new_data
 	if data and data.can_return:
 		data.original_client.add_item(data.item)
 

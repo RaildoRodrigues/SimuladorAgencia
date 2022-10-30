@@ -1,22 +1,42 @@
 extends Control
 
-const LOG = false
-func debug(text : String):
-	if LOG : print(text)
 
-var money : Array = []
 var drag_preview_prefab = preload("res://UI/Elements/drag_preview.tscn")
 
-func setup(difficult : String = 'normal', category : String = 'random' ,value : int = 0):
+#editables
+var difficult := 'normal'
+var category := 'random'
+var value := 0
+var potrait := 'generate'
+var events := ['exit_agency']
+
+#Atributesx
+var money : Array = []
+var stress : float = 0:
+	get:
+		return stress
+	set(_number):
+		stress = _number
+		%stressbar.value = _number
+		if _number >= 100 : emit_signal('stressfull')
+#signals
+signal stressfull
+
+
+
+func setup(_difficult : String = difficult, _category : String = category, _value : int = value ) -> void:
+	difficult = _difficult
+	category = _category
+	value = _value
 	if category == 'random': 
-		var random_category = choose(['deposit'])
-		setup(difficult, random_category, value)
+		category = choose(['deposit'])
+		setup()
 	else:
 		intro_animation()
 		match category:
 			'deposit':
-				bank_client_deposit_setup(difficult, value)
-				debug('generate a deposit client ' + difficult.to_upper() + ' difficult with ' + str(get_total_money()) + ' money'  )
+				bank_client_deposit_setup()
+				
 	
 
 ##########SUPORT FUNCTIONS###############
@@ -33,21 +53,24 @@ func intro_animation():
 	var anim_tween = create_tween()
 	anim_tween.set_ease(Tween.EASE_IN)
 	anim_tween.tween_property(self, 'modulate', start_color, 0.5)
-	
+
+func reset():
+	%Interact.disabled = true
+
 #########DEPOSIT FUNCTIONS#####################
 	
-func bank_client_deposit_setup(difficult, value : int):
+func bank_client_deposit_setup():
 	#setup button
 	%Interact.disabled = false
 	#setup icon
 	#setup value
 	if value == 0:
-		generate_random_money(difficult)
+		generate_random_money()
 	else:
-		gemerate_money(value)
+		gemerate_money()
 	update_money_display()
 
-func generate_random_money(difficult):
+func generate_random_money():
 	var notas_100 = randi_range(1, 5)
 	for notas in range(notas_100):
 		money.append(100)
@@ -60,7 +83,7 @@ func generate_random_money(difficult):
 		for notas in range(notas_20):
 			money.append(20)
 			
-func gemerate_money(value):
+func gemerate_money():
 	while true:
 		if value - 100 >= 0:
 			money.append(100)
@@ -76,8 +99,8 @@ func gemerate_money(value):
 
 func get_total_money() -> int:
 	var total := 0
-	for value in money:
-		total += value
+	for _cedula in money:
+		total += _cedula
 	return total
 
 func _on_interact_button_down() -> void:
@@ -92,8 +115,9 @@ func create_drag_cedula():
 	elif cedula == 20:
 			cedula = preload("res://Code/Resources/Database/cedula_vin.tres").duplicate()
 	else:
-			print('ERR:', cedula)
+			stress += 20
 			return
+			
 	await get_tree().create_timer(0.01).timeout
 	var data = {}
 	data.item = cedula
@@ -104,10 +128,12 @@ func create_drag_cedula():
 	drag_preview.update_drag_display(data)
 	drag_preview.end_drag = 'return_to_client'
 	force_drag(data, drag_preview)
+	
 	update_money_display()
 	
 func add_item(item):
 	if item is Item:
+		if item.category == 'money' : stress += 30
 		for i in range(item.amount):
 			money.append(item.value)
 		update_money_display()
