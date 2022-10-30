@@ -24,7 +24,6 @@ bt_grab_path = NodePath("Button")
 [node name="tex_icon" type="TextureRect" parent="."]
 unique_name_in_owner = true
 custom_minimum_size = Vector2i(48, 48)
-layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 56.0
@@ -33,7 +32,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Control" type="Control" parent="."]
-layout_mode = 2
+layout_mode = 3
 anchors_preset = 0
 offset_left = 64.0
 offset_top = 64.0
@@ -43,7 +42,6 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 
 [node name="lb_value" type="Label" parent="Control"]
-layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -60,7 +58,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 2
 offset_right = 64.0
 offset_bottom = 64.0
 mouse_filter = 1

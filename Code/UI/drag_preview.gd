@@ -19,8 +19,9 @@ func update_drag_display(new_data):
 
 func return_to_slot(data):
 	if data and data.can_return:
+		data.item.amount += data.remain
 		data.inventory.add_item(data.item_index, data.item)
-#		print('item raplaced in ', data.inventory.code, '[', data.item_index, ']')
+#		
 
 func return_to_client(data):
 	if data and data.can_return:

@@ -2,6 +2,5 @@ res://UI/Elements/money_slot.tscn
 res://Code/Resources/Database/cedula_cem.tres
 res://Code/Resources/Database/cedula_cin.tres
 res://Code/Resources/Database/cedula_vin.tres
-res://Code/UI/InventoryContainer.gd
 res://UI/Elements/drag_preview.tscn
-res://Code/UI/ItemContainer.gd
+res://Code/UI/drag_preview.gd
