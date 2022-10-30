@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcu6vecsshdb5"]
+[gd_scene load_steps=5 format=3 uid="uid://dcu6vecsshdb5"]
 
 [ext_resource type="Script" path="res://Code/UI/client_control.gd" id="1_ncb0x"]
-[ext_resource type="Texture2D" uid="uid://cdycsdj0hxwuy" path="res://Art/Icons/money.png" id="1_yvsm4"]
-[ext_resource type="Texture2D" uid="uid://bj8y1stled6s" path="res://Art/Icons/client.png" id="2_wkt75"]
+[ext_resource type="Texture2D" uid="uid://b4eevwghux1yt" path="res://Art/Icons/deposit_icon.tres" id="2_1ugxr"]
+[ext_resource type="Texture2D" uid="uid://bikuvj8x6rojn" path="res://Art/Avatars/velho_avatar.tres" id="3_gfsi8"]
+[ext_resource type="Theme" uid="uid://csiw6phueu4uv" path="res://Art/Theme/hidden_button.tres" id="4_nbg4w"]
 
 [node name="ClientButton" type="PanelContainer"]
 custom_minimum_size = Vector2i(80, 52)
@@ -23,10 +24,8 @@ mouse_filter = 2
 script = ExtResource("1_ncb0x")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
-offset_left = 4.0
 offset_top = 2.0
-offset_right = 86.0
+offset_right = 95.0
 offset_bottom = 50.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -37,8 +36,7 @@ theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-offset_right = 82.0
+offset_right = 95.0
 offset_bottom = 48.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -46,59 +44,46 @@ mouse_filter = 2
 theme_override_constants/separation = 1
 
 [node name="MoneyClientPanel" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-offset_right = 28.0
+offset_right = 41.0
 offset_bottom = 48.0
 mouse_filter = 2
 
 [node name="tex_icon" type="TextureRect" parent="MarginContainer/HBoxContainer/MoneyClientPanel"]
 unique_name_in_owner = true
-layout_mode = 2
-offset_left = 2.0
-offset_right = 26.0
+offset_left = 8.0
+offset_right = 32.0
 offset_bottom = 24.0
 size_flags_horizontal = 4
-size_flags_vertical = 4
 mouse_filter = 2
-texture = ExtResource("1_yvsm4")
+texture = ExtResource("2_1ugxr")
 
 [node name="lb_value" type="Label" parent="MarginContainer/HBoxContainer/MoneyClientPanel"]
 unique_name_in_owner = true
-layout_mode = 2
 offset_top = 28.0
-offset_right = 28.0
-offset_bottom = 48.0
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 12
-text = "9999"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_right = 41.0
+offset_bottom = 43.0
+text = "2222"
 
 [node name="VBoxContainer2" type="PanelContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-offset_left = 29.0
-offset_right = 77.0
+offset_left = 42.0
+offset_right = 90.0
 offset_bottom = 48.0
 size_flags_vertical = 4
 mouse_filter = 2
 
 [node name="tex_avatar" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2i(48, 48)
-layout_mode = 2
 offset_right = 48.0
 offset_bottom = 48.0
 mouse_filter = 2
-texture = ExtResource("2_wkt75")
-ignore_texture_size = true
+texture = ExtResource("3_gfsi8")
 
-[node name="lv_order" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-offset_left = 33.0
+[node name="lb_order" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+offset_left = 25.0
 offset_right = 48.0
-offset_bottom = 20.0
+offset_bottom = 15.0
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 12
 text = "#2"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -106,9 +91,8 @@ vertical_alignment = 1
 [node name="stressbar" type="ProgressBar" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2i(4, 0)
-layout_mode = 2
-offset_left = 78.0
-offset_right = 82.0
+offset_left = 91.0
+offset_right = 95.0
 offset_bottom = 48.0
 size_flags_horizontal = 4
 size_flags_vertical = 1
@@ -118,9 +102,9 @@ show_percentage = false
 
 [node name="Interact" type="Button" parent="MarginContainer"]
 unique_name_in_owner = true
-layout_mode = 2
-offset_right = 82.0
+offset_right = 95.0
 offset_bottom = 48.0
+theme = ExtResource("4_nbg4w")
 disabled = true
 action_mode = 0
 

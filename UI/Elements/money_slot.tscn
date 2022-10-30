@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnfhx72vk8820"]
+[gd_scene load_steps=3 format=3 uid="uid://cnfhx72vk8820"]
 
 [ext_resource type="Script" path="res://Code/UI/money_slot.gd" id="1_qv8jf"]
+[ext_resource type="Theme" uid="uid://csiw6phueu4uv" path="res://Art/Theme/hidden_button.tres" id="2_b3xfo"]
 
 [node name="MoneySlot" type="PanelContainer"]
 custom_minimum_size = Vector2i(64, 64)
@@ -21,6 +22,12 @@ tex_icon_path = NodePath("tex_icon")
 lb_amount_path = NodePath("Control/lb_value")
 bt_grab_path = NodePath("Button")
 
+[node name="Button" type="Button" parent="."]
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 1
+theme = ExtResource("2_b3xfo")
+
 [node name="tex_icon" type="TextureRect" parent="."]
 unique_name_in_owner = true
 custom_minimum_size = Vector2i(48, 48)
@@ -30,6 +37,7 @@ offset_right = 56.0
 offset_bottom = 56.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -40,6 +48,7 @@ offset_right = 64.0
 offset_bottom = 64.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
+mouse_filter = 2
 
 [node name="lb_value" type="Label" parent="Control"]
 anchors_preset = 3
@@ -53,11 +62,5 @@ grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 12
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Button" type="Button" parent="."]
-offset_right = 64.0
-offset_bottom = 64.0
-mouse_filter = 1

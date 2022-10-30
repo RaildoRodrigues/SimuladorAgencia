@@ -95,7 +95,6 @@ func _drop_data(_at_position: Vector2, data) -> void:
 	var item = inventory.item_list[index]
 	if item is Item and item.code == data.item.code:
 		item.amount += data.item.amount
-		item.emit_signal('droped', self)
 		update_slot_display(item)
 	elif data.has('inventory'):
 		if item and data.item: data.item.amount += data.remain
@@ -104,7 +103,8 @@ func _drop_data(_at_position: Vector2, data) -> void:
 	elif data.has('original_client'):
 		inventory.add_item(index, data.item)
 		data.original_client.add_item(item)
-
+	if data.item : data.item.emit_signal('droped', self)
+	
 func _can_drop_data(_at_position: Vector2, data) -> bool:
 	return typeof(data) == TYPE_DICTIONARY and data.has("item")
 	

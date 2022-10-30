@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="HellAgency"
-run/main_scene="res://UI/Pages/mockup.tscn"
+run/main_scene="res://UI/Pages/MainUI.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 run/max_fps=60
 config/icon="res://icon.svg"
@@ -47,6 +47,10 @@ window/size/window_height_override=960
 window/handheld/orientation=1
 window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
+
+[gui]
+
+theme/custom="res://Art/Theme/pixelartgameagency.theme"
 
 [input_devices]
 

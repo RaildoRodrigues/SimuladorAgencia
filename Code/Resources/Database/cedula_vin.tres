@@ -1,13 +1,13 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://by3icqnxbt6to"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://tubk2vs2dq6h"]
 
 [ext_resource type="Script" path="res://Code/Resources/Prefabs/item.gd" id="1_dai2n"]
-[ext_resource type="Texture2D" uid="uid://bharnid1dii05" path="res://Art/Icons/money_20.png" id="2_2ighs"]
+[ext_resource type="Texture2D" uid="uid://dexjviea33y35" path="res://Art/Itens/cedula_20.tres" id="2_v56ln"]
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_dai2n")
 code = "Cedula Vinte"
-texture = ExtResource("2_2ighs")
+texture = ExtResource("2_v56ln")
 category = "money"
 amount = 1
 value = 20.0

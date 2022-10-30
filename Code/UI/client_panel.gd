@@ -5,10 +5,10 @@ extends PanelContainer
 func spawn_client():
 	var new_client =  ClientPack.instantiate()
 	%ClientsGrid.add_child(new_client)
-	new_client.setup()
+	new_client.setup('hard')
 
 
 func _on_spawn_timer_timeout() -> void:
 	spawn_client()
-	spawn_client()
-	spawn_client()
+	%SpawnTimer.start(10)
+

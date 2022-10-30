@@ -1,0 +1,213 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjtt7l4aad47i"]
+
+[ext_resource type="PackedScene" uid="uid://ctbo4x1hk7aud" path="res://UI/Elements/gaveta_panel.tscn" id="1_cgcdd"]
+[ext_resource type="PackedScene" uid="uid://chxq67xhtbuah" path="res://UI/Elements/product_slot.tscn" id="2_k1dr8"]
+[ext_resource type="PackedScene" uid="uid://cwfr57yfemtfn" path="res://UI/Elements/client_panel.tscn" id="3_37dsv"]
+
+[node name="Mockup" type="VBoxContainer"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="AgencyPanel" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 270.0
+offset_bottom = 306.0
+size_flags_vertical = 3
+
+[node name="StressOmeter" type="ProgressBar" parent="AgencyPanel"]
+custom_minimum_size = Vector2i(12, 0)
+layout_mode = 2
+offset_right = 12.0
+offset_bottom = 306.0
+size_flags_vertical = 1
+fill_mode = 3
+show_percentage = false
+
+[node name="ServicesPanel" type="VBoxContainer" parent="AgencyPanel"]
+layout_mode = 2
+offset_left = 16.0
+offset_right = 270.0
+offset_bottom = 306.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="GavetaPanel" parent="AgencyPanel/ServicesPanel" instance=ExtResource("1_cgcdd")]
+layout_mode = 2
+offset_top = 37.0
+offset_bottom = 268.0
+
+[node name="ProdutosPanel" type="PanelContainer" parent="AgencyPanel/ServicesPanel"]
+visible = false
+layout_mode = 2
+offset_top = 240.0
+offset_right = 254.0
+offset_bottom = 480.0
+
+[node name="MarginContainer" type="MarginContainer" parent="AgencyPanel/ServicesPanel/ProdutosPanel"]
+layout_mode = 2
+offset_right = 254.0
+offset_bottom = 240.0
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer"]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 248.0
+offset_bottom = 234.0
+
+[node name="Label" type="Label" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+offset_right = 242.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 12
+text = "GAVETA DE PRODUTOS"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+offset_left = 19.0
+offset_top = 24.0
+offset_right = 223.0
+offset_bottom = 228.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 4
+
+[node name="ProductSlot" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
+layout_mode = 2
+
+[node name="ProductSlot2" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
+layout_mode = 2
+offset_left = 52.0
+offset_right = 100.0
+
+[node name="ProductSlot3" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
+layout_mode = 2
+offset_left = 104.0
+offset_right = 152.0
+
+[node name="ProductSlot4" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
+layout_mode = 2
+offset_left = 156.0
+offset_right = 204.0
+
+[node name="ProductSlot5" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
+layout_mode = 2
+offset_top = 52.0
+offset_bottom = 100.0
+
+[node name="ProductSlot6" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
+layout_mode = 2
+offset_left = 52.0
+offset_top = 52.0
+offset_right = 100.0
+offset_bottom = 100.0
+
+[node name="ProductSlot7" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
+layout_mode = 2
+offset_left = 104.0
+offset_top = 52.0
+offset_right = 152.0
+offset_bottom = 100.0
+
+[node name="ProductSlot8" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
+layout_mode = 2
+offset_left = 156.0
+offset_top = 52.0
+offset_right = 204.0
+offset_bottom = 100.0
+
+[node name="ProductSlot9" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
+layout_mode = 2
+offset_top = 104.0
+offset_bottom = 152.0
+
+[node name="ProductSlot10" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
+layout_mode = 2
+offset_left = 52.0
+offset_top = 104.0
+offset_right = 100.0
+offset_bottom = 152.0
+
+[node name="ProductSlot11" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
+layout_mode = 2
+offset_left = 104.0
+offset_top = 104.0
+offset_right = 152.0
+offset_bottom = 152.0
+
+[node name="ProductSlot12" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
+layout_mode = 2
+offset_left = 156.0
+offset_top = 104.0
+offset_right = 204.0
+offset_bottom = 152.0
+
+[node name="ProductSlot13" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
+layout_mode = 2
+offset_top = 156.0
+offset_bottom = 204.0
+
+[node name="ProductSlot14" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
+layout_mode = 2
+offset_left = 52.0
+offset_top = 156.0
+offset_right = 100.0
+offset_bottom = 204.0
+
+[node name="ProductSlot15" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
+layout_mode = 2
+offset_left = 104.0
+offset_top = 156.0
+offset_right = 152.0
+offset_bottom = 204.0
+
+[node name="ProductSlot16" parent="AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
+layout_mode = 2
+offset_left = 156.0
+offset_top = 156.0
+offset_right = 204.0
+offset_bottom = 204.0
+
+[node name="ServiceButtons" type="PanelContainer" parent="AgencyPanel"]
+visible = false
+layout_mode = 2
+offset_left = 266.0
+offset_right = 270.0
+offset_bottom = 480.0
+size_flags_horizontal = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="AgencyPanel/ServiceButtons"]
+layout_mode = 2
+offset_right = 4.0
+offset_bottom = 480.0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AgencyPanel/ServiceButtons/MarginContainer"]
+layout_mode = 2
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 478.0
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="AgencyPanel/ServiceButtons/MarginContainer/VBoxContainer"]
+layout_mode = 2
+offset_top = 238.0
+offset_bottom = 238.0
+
+[node name="ClientPanel" parent="." instance=ExtResource("3_37dsv")]
+layout_mode = 2

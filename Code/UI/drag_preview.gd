@@ -22,12 +22,14 @@ func return_to_slot(new_data):
 	if data and data.can_return:
 		data.item.amount += data.remain
 		data.inventory.add_item(data.item_index, data.item)
+		data.item.emit_signal('droped', data.original_slot)
 #		
 
 func return_to_client(new_data):
 	data = new_data
 	if data and data.can_return:
 		data.original_client.add_item(data.item)
+		data.item.emit_signal('droped', data.original_client)
 
 func _exit_tree() -> void:
 	call(end_drag, data)

@@ -8,7 +8,7 @@ var difficult := 'normal'
 var category := 'random'
 var value := 0
 var potrait := 'generate'
-var events := ['exit_agency']
+var events := []
 
 #Atributesx
 var money : Array = []
@@ -57,6 +57,26 @@ func intro_animation():
 func reset():
 	%Interact.disabled = true
 
+func call_event():
+	reset()
+	var event = events.pop_front()
+	if event:
+		print('prox')
+	else:
+		exit_agency()
+
+
+func exit_agency():
+	var final_color = Color.TRANSPARENT
+	modulate = Color.WHITE 
+	var anim_tween = create_tween()
+	anim_tween.connect('finished', queue_free)
+	anim_tween.set_ease(Tween.EASE_IN)
+	anim_tween.tween_property(self, 'modulate', final_color, 0.5)
+	
+
+
+
 #########DEPOSIT FUNCTIONS#####################
 	
 func bank_client_deposit_setup():
@@ -75,11 +95,11 @@ func generate_random_money():
 	for notas in range(notas_100):
 		money.append(100)
 	if difficult == 'normal' or difficult == 'hard':
-		var notas_50 = randi_range(1, 5)
+		var notas_50 = randi_range(0, 4)
 		for notas in range(notas_50):
 			money.append(50)
 	if difficult == 'hard':
-		var notas_20 = randi_range(1, 5)
+		var notas_20 = randi_range(0, 3)
 		for notas in range(notas_20):
 			money.append(20)
 			
@@ -107,7 +127,7 @@ func _on_interact_button_down() -> void:
 	create_drag_cedula()
 	
 func create_drag_cedula():
-	var cedula = money.pop_back()
+	var cedula = money.pop_front()
 	if cedula == 100:
 			cedula = preload("res://Code/Resources/Database/cedula_cem.tres").duplicate()
 	elif cedula == 50:
@@ -124,13 +144,17 @@ func create_drag_cedula():
 	data.item.amount = 1
 	data.original_client = self
 	data.can_return = true
+	data.item.connect('droped', my_cedula_droped)
 	var drag_preview = drag_preview_prefab.instantiate()
 	drag_preview.update_drag_display(data)
 	drag_preview.end_drag = 'return_to_client'
 	force_drag(data, drag_preview)
-	
 	update_money_display()
 	
+func my_cedula_droped(_slot):
+	if money.is_empty():
+		call_event()
+
 func add_item(item):
 	if item is Item:
 		if item.category == 'money' : stress += 30
