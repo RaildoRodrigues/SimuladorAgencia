@@ -1,20 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3kwe45i42n1u"]
+[gd_scene load_steps=6 format=3 uid="uid://c3kwe45i42n1u"]
 
 [ext_resource type="PackedScene" uid="uid://ctbo4x1hk7aud" path="res://UI/Elements/gaveta_panel.tscn" id="1_211nh"]
 [ext_resource type="Theme" uid="uid://71ufhx1gp45i" path="res://Art/Theme/pixelartgameagency.theme" id="1_xgnmv"]
 [ext_resource type="PackedScene" uid="uid://chxq67xhtbuah" path="res://UI/Elements/product_slot.tscn" id="2_xtobs"]
-[ext_resource type="PackedScene" uid="uid://dcu6vecsshdb5" path="res://UI/Elements/client_button.tscn" id="3_dx4aq"]
+[ext_resource type="PackedScene" uid="uid://bv20pdakxokv8" path="res://UI/Elements/client_button.tscn" id="3_dx4aq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3lau2"]
 
 [node name="BG" type="PanelContainer"]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3lau2")
 
 [node name="Mockup" type="VBoxContainer" parent="."]
 texture_filter = 1
-layout_mode = 2
 offset_right = 270.0
 offset_bottom = 480.0
 grow_horizontal = 2
@@ -23,14 +26,12 @@ theme = ExtResource("1_xgnmv")
 alignment = 2
 
 [node name="AgencyPanel" type="HBoxContainer" parent="Mockup"]
-layout_mode = 2
 offset_right = 270.0
 offset_bottom = 273.0
 size_flags_vertical = 3
 
 [node name="StressOmeter" type="ProgressBar" parent="Mockup/AgencyPanel"]
 custom_minimum_size = Vector2i(12, 0)
-layout_mode = 2
 offset_right = 12.0
 offset_bottom = 273.0
 size_flags_vertical = 1
@@ -39,7 +40,6 @@ fill_mode = 3
 show_percentage = false
 
 [node name="ServicesPanel" type="VBoxContainer" parent="Mockup/AgencyPanel"]
-layout_mode = 2
 offset_left = 16.0
 offset_right = 270.0
 offset_bottom = 273.0
@@ -47,19 +47,16 @@ size_flags_horizontal = 3
 alignment = 1
 
 [node name="GavetaPanel" parent="Mockup/AgencyPanel/ServicesPanel" instance=ExtResource("1_211nh")]
-layout_mode = 2
-offset_top = 21.0
-offset_bottom = 252.0
+offset_top = 15.0
+offset_bottom = 258.0
 
 [node name="ProdutosPanel" type="PanelContainer" parent="Mockup/AgencyPanel/ServicesPanel"]
 visible = false
-layout_mode = 2
 offset_top = 240.0
 offset_right = 254.0
 offset_bottom = 480.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel"]
-layout_mode = 2
 offset_right = 254.0
 offset_bottom = 240.0
 theme_override_constants/margin_left = 6
@@ -68,14 +65,12 @@ theme_override_constants/margin_right = 6
 theme_override_constants/margin_bottom = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer"]
-layout_mode = 2
 offset_left = 6.0
 offset_top = 6.0
 offset_right = 248.0
 offset_bottom = 234.0
 
 [node name="Label" type="Label" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_right = 242.0
 offset_bottom = 20.0
 theme_override_font_sizes/font_size = 12
@@ -83,7 +78,6 @@ text = "GAVETA DE PRODUTOS"
 horizontal_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_left = 19.0
 offset_top = 24.0
 offset_right = 223.0
@@ -93,96 +87,80 @@ size_flags_vertical = 4
 columns = 4
 
 [node name="ProductSlot" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_xtobs")]
-layout_mode = 2
 
 [node name="ProductSlot2" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_xtobs")]
-layout_mode = 2
 offset_left = 52.0
 offset_right = 100.0
 
 [node name="ProductSlot3" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_xtobs")]
-layout_mode = 2
 offset_left = 104.0
 offset_right = 152.0
 
 [node name="ProductSlot4" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_xtobs")]
-layout_mode = 2
 offset_left = 156.0
 offset_right = 204.0
 
 [node name="ProductSlot5" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_xtobs")]
-layout_mode = 2
 offset_top = 52.0
 offset_bottom = 100.0
 
 [node name="ProductSlot6" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_xtobs")]
-layout_mode = 2
 offset_left = 52.0
 offset_top = 52.0
 offset_right = 100.0
 offset_bottom = 100.0
 
 [node name="ProductSlot7" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_xtobs")]
-layout_mode = 2
 offset_left = 104.0
 offset_top = 52.0
 offset_right = 152.0
 offset_bottom = 100.0
 
 [node name="ProductSlot8" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_xtobs")]
-layout_mode = 2
 offset_left = 156.0
 offset_top = 52.0
 offset_right = 204.0
 offset_bottom = 100.0
 
 [node name="ProductSlot9" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_xtobs")]
-layout_mode = 2
 offset_top = 104.0
 offset_bottom = 152.0
 
 [node name="ProductSlot10" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_xtobs")]
-layout_mode = 2
 offset_left = 52.0
 offset_top = 104.0
 offset_right = 100.0
 offset_bottom = 152.0
 
 [node name="ProductSlot11" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_xtobs")]
-layout_mode = 2
 offset_left = 104.0
 offset_top = 104.0
 offset_right = 152.0
 offset_bottom = 152.0
 
 [node name="ProductSlot12" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_xtobs")]
-layout_mode = 2
 offset_left = 156.0
 offset_top = 104.0
 offset_right = 204.0
 offset_bottom = 152.0
 
 [node name="ProductSlot13" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_xtobs")]
-layout_mode = 2
 offset_top = 156.0
 offset_bottom = 204.0
 
 [node name="ProductSlot14" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_xtobs")]
-layout_mode = 2
 offset_left = 52.0
 offset_top = 156.0
 offset_right = 100.0
 offset_bottom = 204.0
 
 [node name="ProductSlot15" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_xtobs")]
-layout_mode = 2
 offset_left = 104.0
 offset_top = 156.0
 offset_right = 152.0
 offset_bottom = 204.0
 
 [node name="ProductSlot16" parent="Mockup/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_xtobs")]
-layout_mode = 2
 offset_left = 156.0
 offset_top = 156.0
 offset_right = 204.0
@@ -190,14 +168,12 @@ offset_bottom = 204.0
 
 [node name="ServiceButtons" type="PanelContainer" parent="Mockup/AgencyPanel"]
 visible = false
-layout_mode = 2
 offset_left = 266.0
 offset_right = 270.0
 offset_bottom = 480.0
 size_flags_horizontal = 8
 
 [node name="MarginContainer" type="MarginContainer" parent="Mockup/AgencyPanel/ServiceButtons"]
-layout_mode = 2
 offset_right = 4.0
 offset_bottom = 480.0
 theme_override_constants/margin_left = 2
@@ -206,7 +182,6 @@ theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Mockup/AgencyPanel/ServiceButtons/MarginContainer"]
-layout_mode = 2
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 2.0
@@ -215,30 +190,27 @@ theme_override_constants/separation = 16
 alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="Mockup/AgencyPanel/ServiceButtons/MarginContainer/VBoxContainer"]
-layout_mode = 2
 offset_top = 238.0
 offset_bottom = 238.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Mockup"]
 custom_minimum_size = Vector2i(0, 203)
-layout_mode = 2
 offset_top = 277.0
 offset_right = 270.0
 offset_bottom = 480.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Mockup/PanelContainer"]
-layout_mode = 2
-offset_right = 270.0
-offset_bottom = 203.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 268.0
+offset_bottom = 197.0
 
 [node name="GridContainer" type="GridContainer" parent="Mockup/PanelContainer/ScrollContainer"]
-layout_mode = 2
-offset_right = 293.0
-offset_bottom = 276.0
+offset_right = 248.0
+offset_bottom = 291.0
 columns = 3
 
 [node name="ClientButton" parent="Mockup/PanelContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dx4aq")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -246,175 +218,163 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 0.0
 offset_top = 0.0
-offset_right = 95.0
-offset_bottom = 52.0
+offset_right = 80.0
+offset_bottom = 45.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="ClientButton2" parent="Mockup/PanelContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dx4aq")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 99.0
+offset_left = 84.0
 offset_top = 0.0
-offset_right = 194.0
-offset_bottom = 52.0
+offset_right = 164.0
+offset_bottom = 45.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="ClientButton3" parent="Mockup/PanelContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dx4aq")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 198.0
+offset_left = 168.0
 offset_top = 0.0
-offset_right = 293.0
-offset_bottom = 52.0
+offset_right = 248.0
+offset_bottom = 45.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="ClientButton4" parent="Mockup/PanelContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dx4aq")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 0.0
-offset_top = 56.0
-offset_right = 95.0
-offset_bottom = 108.0
+offset_top = 49.0
+offset_right = 80.0
+offset_bottom = 94.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="ClientButton5" parent="Mockup/PanelContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dx4aq")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 99.0
-offset_top = 56.0
-offset_right = 194.0
-offset_bottom = 108.0
+offset_left = 84.0
+offset_top = 49.0
+offset_right = 164.0
+offset_bottom = 94.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="ClientButton6" parent="Mockup/PanelContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dx4aq")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 198.0
-offset_top = 56.0
-offset_right = 293.0
-offset_bottom = 108.0
+offset_left = 168.0
+offset_top = 49.0
+offset_right = 248.0
+offset_bottom = 94.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="ClientButton7" parent="Mockup/PanelContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dx4aq")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 0.0
-offset_top = 112.0
-offset_right = 95.0
-offset_bottom = 164.0
+offset_top = 98.0
+offset_right = 80.0
+offset_bottom = 143.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="ClientButton8" parent="Mockup/PanelContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dx4aq")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 99.0
-offset_top = 112.0
-offset_right = 194.0
-offset_bottom = 164.0
+offset_left = 84.0
+offset_top = 98.0
+offset_right = 164.0
+offset_bottom = 143.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="ClientButton9" parent="Mockup/PanelContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dx4aq")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 198.0
-offset_top = 112.0
-offset_right = 293.0
-offset_bottom = 164.0
+offset_left = 168.0
+offset_top = 98.0
+offset_right = 248.0
+offset_bottom = 143.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="ClientButton10" parent="Mockup/PanelContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dx4aq")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 0.0
-offset_top = 168.0
-offset_right = 95.0
-offset_bottom = 220.0
+offset_top = 147.0
+offset_right = 80.0
+offset_bottom = 192.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="ClientButton11" parent="Mockup/PanelContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dx4aq")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 99.0
-offset_top = 168.0
-offset_right = 194.0
-offset_bottom = 220.0
+offset_left = 84.0
+offset_top = 147.0
+offset_right = 164.0
+offset_bottom = 192.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="ClientButton12" parent="Mockup/PanelContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dx4aq")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 198.0
-offset_top = 168.0
-offset_right = 293.0
-offset_bottom = 220.0
+offset_left = 168.0
+offset_top = 147.0
+offset_right = 248.0
+offset_bottom = 192.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="ClientButton13" parent="Mockup/PanelContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dx4aq")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 0.0
-offset_top = 224.0
-offset_right = 95.0
-offset_bottom = 276.0
+offset_top = 196.0
+offset_right = 80.0
+offset_bottom = 241.0
 grow_horizontal = 1
 grow_vertical = 1

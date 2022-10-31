@@ -5,12 +5,12 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_chgux"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vk6bv"]
-bg_color = Color(0.81, 0.81, 0.81, 0.392157)
+bg_color = Color(1, 1, 1, 0.6)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdioh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhe05"]
-bg_color = Color(1, 1, 1, 0.705882)
+bg_color = Color(1, 1, 1, 1)
 
 [resource]
 Button/styles/disabled = SubResource("StyleBoxEmpty_5eeri")

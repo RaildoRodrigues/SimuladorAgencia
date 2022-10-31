@@ -163,4 +163,5 @@ func add_item(item):
 		update_money_display()
 
 func update_money_display():
-	%lb_value.text = str(get_total_money())
+#	%lb_value.text = str(get_total_money())
+	%lb_value.text = "%03d" % get_total_money()

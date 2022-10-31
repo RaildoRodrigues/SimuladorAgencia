@@ -1,54 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctbo4x1hk7aud"]
+[gd_scene load_steps=4 format=3 uid="uid://ctbo4x1hk7aud"]
 
 [ext_resource type="PackedScene" uid="uid://cnfhx72vk8820" path="res://UI/Elements/money_slot.tscn" id="1_1cucd"]
 [ext_resource type="Script" path="res://Code/UI/gaveta_panel.gd" id="1_u5yk2"]
+[ext_resource type="Theme" uid="uid://ckaqm0ck6ymph" path="res://Art/Theme/gaveta_panel.theme" id="1_v8fe8"]
 
 [node name="GavetaPanel" type="PanelContainer" groups=["gaveta"]]
+texture_filter = 1
 offset_top = 69.0
 offset_right = 254.0
 offset_bottom = 237.0
+theme = ExtResource("1_v8fe8")
 script = ExtResource("1_u5yk2")
 item_grid_path = NodePath("MarginContainer/VBoxContainer/gaveta_grid")
 code = "gaveta"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
-offset_right = 254.0
-offset_bottom = 231.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 248.0
+offset_bottom = 237.0
 theme_override_constants/margin_left = 6
 theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 6
 theme_override_constants/margin_bottom = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
 offset_left = 6.0
 offset_top = 6.0
-offset_right = 248.0
+offset_right = 236.0
 offset_bottom = 225.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_right = 242.0
+offset_right = 230.0
 offset_bottom = 15.0
 text = "GAVETA DE DINHEIRO"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 visible = false
-layout_mode = 2
 offset_top = 24.0
 offset_right = 244.0
 offset_bottom = 45.0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
 offset_right = 57.0
 offset_bottom = 20.0
 text = "Dinheiro: "
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
 offset_left = 61.0
 offset_right = 244.0
 offset_bottom = 21.0
@@ -58,17 +57,15 @@ theme_override_font_sizes/font_size = 12
 
 [node name="gaveta_grid" type="GridContainer" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 2
-offset_left = 21.0
+offset_left = 15.0
 offset_top = 19.0
-offset_right = 221.0
+offset_right = 215.0
 offset_bottom = 219.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 3
 
 [node name="MoneySlot" parent="MarginContainer/VBoxContainer/gaveta_grid" instance=ExtResource("1_1cucd")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -83,7 +80,6 @@ grow_vertical = 1
 size_flags_vertical = 4
 
 [node name="MoneySlot2" parent="MarginContainer/VBoxContainer/gaveta_grid" instance=ExtResource("1_1cucd")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -97,7 +93,6 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="MoneySlot3" parent="MarginContainer/VBoxContainer/gaveta_grid" instance=ExtResource("1_1cucd")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -111,7 +106,6 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="MoneySlot4" parent="MarginContainer/VBoxContainer/gaveta_grid" instance=ExtResource("1_1cucd")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -125,7 +119,6 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="MoneySlot5" parent="MarginContainer/VBoxContainer/gaveta_grid" instance=ExtResource("1_1cucd")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -139,7 +132,6 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="MoneySlot6" parent="MarginContainer/VBoxContainer/gaveta_grid" instance=ExtResource("1_1cucd")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -153,7 +145,6 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="MoneySlot7" parent="MarginContainer/VBoxContainer/gaveta_grid" instance=ExtResource("1_1cucd")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -167,7 +158,6 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="MoneySlot8" parent="MarginContainer/VBoxContainer/gaveta_grid" instance=ExtResource("1_1cucd")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -181,7 +171,6 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="MoneySlot9" parent="MarginContainer/VBoxContainer/gaveta_grid" instance=ExtResource("1_1cucd")]
-layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0

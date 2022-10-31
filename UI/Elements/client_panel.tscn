@@ -3,19 +3,22 @@
 [ext_resource type="Script" path="res://Code/UI/client_panel.gd" id="1_ntanf"]
 
 [node name="ClientPanel" type="PanelContainer"]
+texture_filter = 1
 offset_top = 310.0
 offset_right = 270.0
 offset_bottom = 480.0
 script = ExtResource("1_ntanf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 270.0
-offset_bottom = 170.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 268.0
+offset_bottom = 172.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2i(0, 170)
-offset_left = 129.0
-offset_right = 141.0
+offset_left = 127.0
+offset_right = 139.0
 offset_bottom = 170.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -37,7 +40,7 @@ offset_left = 2.0
 offset_top = 2.0
 offset_right = 10.0
 offset_bottom = 168.0
-theme_override_constants/h_separation = 3
+theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 4
 columns = 3
 
