@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbbs7l8vjcsa5"]
+
+[ext_resource type="Script" path="res://Code/UI/stress_ometer.gd" id="1_3a5hn"]
+
+[node name="StressOmeter" type="ProgressBar" groups=["main_stress_bar", "stress_bar"]]
+custom_minimum_size = Vector2i(12, 0)
+offset_right = 12.0
+offset_bottom = 298.0
+size_flags_vertical = 1
+fill_mode = 3
+show_percentage = false
+script = ExtResource("1_3a5hn")

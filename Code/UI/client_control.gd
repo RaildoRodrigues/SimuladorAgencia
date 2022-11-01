@@ -2,6 +2,8 @@ extends Control
 
 
 var drag_preview_prefab = preload("res://UI/Elements/drag_preview.tscn")
+var deposit_icon = preload("res://Art/Icons/deposit_icon.tres")
+var withdraw_icon = preload("res://Art/Icons/withdraw_icon.tres")
 
 #editables
 var difficult := 'normal'
@@ -9,18 +11,25 @@ var category := 'random'
 var value := 0
 var potrait := 'generate'
 var events := []
+var passive_stress = 10
 
 #Atributesx
 var money : Array = []
+var withdraw_value = 0
 var stress : float = 0:
 	get:
 		return stress
 	set(_number):
 		stress = _number
 		%stressbar.value = _number
+		%Anim.stop()
+		%Anim.play('stress')
+		%stressbar.modulate = lerp(Color.ORANGE, Color.RED, _number /100)
 		if _number >= 100 : emit_signal('stressfull')
+var can_drop_money = false
 #signals
 signal stressfull
+signal dispached
 
 
 
@@ -29,13 +38,15 @@ func setup(_difficult : String = difficult, _category : String = category, _valu
 	category = _category
 	value = _value
 	if category == 'random': 
-		category = choose(['deposit'])
+		category = choose(['deposit', 'withdraw'])
 		setup()
 	else:
 		intro_animation()
 		match category:
 			'deposit':
 				bank_client_deposit_setup()
+			'withdraw':
+				bank_client_withdraw_setup()
 				
 	
 
@@ -46,6 +57,15 @@ func choose(array : Array):
 	random_array.shuffle()
 	return random_array[0]
 
+func _on_stress_timer_timeout() -> void:
+	if stress >= 100:
+		%Anim.stop()
+		%Anim.play('stress')
+		emit_signal('stressfull')
+		
+func _on_wait_timer_timeout() -> void:
+	stress += passive_stress
+	%WaitTimer.start(10)
 	
 func intro_animation():
 	var start_color = Color.WHITE
@@ -55,7 +75,8 @@ func intro_animation():
 	anim_tween.tween_property(self, 'modulate', start_color, 0.5)
 
 func reset():
-	%Interact.disabled = true
+	%Interact.visible = false
+	can_drop_money = false
 
 func call_event():
 	reset()
@@ -73,6 +94,7 @@ func exit_agency():
 	anim_tween.connect('finished', queue_free)
 	anim_tween.set_ease(Tween.EASE_IN)
 	anim_tween.tween_property(self, 'modulate', final_color, 0.5)
+	emit_signal('dispached')
 	
 
 
@@ -81,8 +103,9 @@ func exit_agency():
 	
 func bank_client_deposit_setup():
 	#setup button
-	%Interact.disabled = false
+	%Interact.visible = true
 	#setup icon
+	%tex_icon.texture = deposit_icon
 	#setup value
 	if value == 0:
 		generate_random_money()
@@ -165,3 +188,31 @@ func add_item(item):
 func update_money_display():
 #	%lb_value.text = str(get_total_money())
 	%lb_value.text = "%03d" % get_total_money()
+
+##############WITHDRAW FUNCTIONS################
+
+func bank_client_withdraw_setup():
+	#setup icon
+	%tex_icon.texture = withdraw_icon
+	#setup value
+	can_drop_money = true
+	if value == 0:
+		generate_random_money()
+	else:
+		gemerate_money()
+	update_money_display()
+	withdraw_value = get_total_money()
+	
+func _can_drop_data(_at_position: Vector2, data) -> bool:
+	if category == 'withdraw':
+		return typeof(data) == TYPE_DICTIONARY and data.has("item") and data.item.category == 'money'
+	else:
+		return false
+	
+func _drop_data(_at_position: Vector2, data) -> void:
+	if category == 'withdraw':
+		withdraw_value -= data.item.value
+		%lb_value.text = "%03d" % withdraw_value
+		print('dropei')
+	
+	
