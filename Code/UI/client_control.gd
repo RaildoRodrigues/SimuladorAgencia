@@ -10,13 +10,20 @@ var frames = {'doc' : preload("res://Art/Theme/client_DOC.theme"),
 
 
 #editables
-var difficult := 'random'
-var category := 'random'
-var value := []
-var potrait := 'generate'
-var events := []
+var category = 'random'
+var value = [100]
+var potrait = 'generate'
+var events = []
 var passive_stress = 10
 
+
+var client_configs = {
+	category = category,
+	value = value,
+	potrait = potrait,
+	events = events,
+	passive_stress = passive_stress
+}
 
 
 #Atributesx
@@ -36,17 +43,20 @@ var can_drop_money = false
 var can_pick_money = false
 
 #signals
-signal stressfull
+signal stressfull(stress_amount)
 signal dispached
 signal loss_money(amount)
 
 
-func setup(_difficult : String = difficult, _category : String = category, _value : Array = value ) -> void:
+func setup(_client_configs = client_configs) -> void:
+	client_configs.merge(_client_configs, true)
+	category =client_configs.category
+	value = client_configs.value
+	potrait = client_configs.potrait
+	events = client_configs.events
+	passive_stress = client_configs.passive_stress
 	intro_animation()
-	difficult = _difficult
-	category = _category
-	value = _value
-	if difficult == 'random' : difficult = choose(['easy', 'normal', 'hard'])
+	
 	if category == 'random' : category = choose(['deposit', 'withdraw'])
 	match category:
 		'deposit':
@@ -115,25 +125,10 @@ func bank_client_deposit_setup():
 	#setup icon
 	%tex_icon.texture = deposit_icon
 	#setup value
-	if value.is_empty():
-		generate_random_money()
-	else:
-		money = value.duplicate()
+	money = value.duplicate()
 	update_money_display()
 
-func generate_random_money():
-	var notas_100 = randi_range(1, 5)
-	for notas in range(notas_100):
-		money.append(100)
-	if difficult == 'normal' or difficult == 'hard':
-		var notas_50 = randi_range(0, 4)
-		for notas in range(notas_50):
-			money.append(50)
-	if difficult == 'hard':
-		var notas_20 = randi_range(0, 3)
-		for notas in range(notas_20):
-			money.append(20)
-			
+
 
 func get_total_money() -> int:
 	var total := 0
@@ -199,10 +194,7 @@ func bank_client_withdraw_setup():
 	%tex_icon.texture = withdraw_icon
 	#setup value
 	can_drop_money = true
-	if value.is_empty():
-		generate_random_money()
-	else:
-		money = value.duplicate()
+	money = value.duplicate()
 	update_money_display()
 	withdraw_value = get_total_money()
 	
@@ -218,10 +210,12 @@ func _drop_data(_at_position: Vector2, data) -> void:
 		withdraw_value -= data.item.value * data.item.amount
 		data.item.emit_signal('droped', null)
 		%lb_value.text = "%03d" % withdraw_value
+		%Anim.stop()
+		%Anim.play('great')
 		if withdraw_value <= 0:
 			call_event()
 		if withdraw_value < 0:
 			emit_signal('loss_money', withdraw_value)
-			emit_signal('stressfull')
+			emit_signal('stressfull', max(abs(withdraw_value/10), 1))
 	
 	
