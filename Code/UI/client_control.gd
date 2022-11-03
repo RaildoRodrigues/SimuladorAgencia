@@ -1,17 +1,23 @@
 extends Control
 
-
+#ARTS
 var drag_preview_prefab = preload("res://UI/Elements/drag_preview.tscn")
 var deposit_icon = preload("res://Art/Icons/deposit_icon.tres")
 var withdraw_icon = preload("res://Art/Icons/withdraw_icon.tres")
+var frames = {'doc' : preload("res://Art/Theme/client_DOC.theme"),
+				'rg': preload("res://Art/Theme/client_RG.theme"),
+				'papper' : preload("res://Art/Theme/client_PAP.theme")}
+
 
 #editables
-var difficult := 'normal'
+var difficult := 'random'
 var category := 'random'
-var value := 0
+var value := []
 var potrait := 'generate'
 var events := []
 var passive_stress = 10
+
+
 
 #Atributesx
 var money : Array = []
@@ -27,26 +33,28 @@ var stress : float = 0:
 		%stressbar.modulate = lerp(Color.ORANGE, Color.RED, _number /100)
 		if _number >= 100 : emit_signal('stressfull')
 var can_drop_money = false
+var can_pick_money = false
+
 #signals
 signal stressfull
 signal dispached
+signal loss_money(amount)
 
 
-
-func setup(_difficult : String = difficult, _category : String = category, _value : int = value ) -> void:
+func setup(_difficult : String = difficult, _category : String = category, _value : Array = value ) -> void:
+	intro_animation()
 	difficult = _difficult
 	category = _category
 	value = _value
-	if category == 'random': 
-		category = choose(['deposit', 'withdraw'])
-		setup()
-	else:
-		intro_animation()
-		match category:
-			'deposit':
-				bank_client_deposit_setup()
-			'withdraw':
-				bank_client_withdraw_setup()
+	if difficult == 'random' : difficult = choose(['easy', 'normal', 'hard'])
+	if category == 'random' : category = choose(['deposit', 'withdraw'])
+	match category:
+		'deposit':
+			theme = frames.papper
+			bank_client_deposit_setup()
+		'withdraw':
+			theme = choose([frames.rg, frames.doc])
+			bank_client_withdraw_setup()
 				
 	
 
@@ -75,7 +83,7 @@ func intro_animation():
 	anim_tween.tween_property(self, 'modulate', start_color, 0.5)
 
 func reset():
-	%Interact.visible = false
+	can_pick_money = false
 	can_drop_money = false
 
 func call_event():
@@ -103,14 +111,14 @@ func exit_agency():
 	
 func bank_client_deposit_setup():
 	#setup button
-	%Interact.visible = true
+	can_pick_money = true
 	#setup icon
 	%tex_icon.texture = deposit_icon
 	#setup value
-	if value == 0:
+	if value.is_empty():
 		generate_random_money()
 	else:
-		gemerate_money()
+		money = value.duplicate()
 	update_money_display()
 
 func generate_random_money():
@@ -126,19 +134,6 @@ func generate_random_money():
 		for notas in range(notas_20):
 			money.append(20)
 			
-func gemerate_money():
-	while true:
-		if value - 100 >= 0:
-			money.append(100)
-			value -= 100
-		elif value - 50 >= 0:
-			money.append(50)
-			value -= 50
-		elif  value - 20 >= 0:
-			money.append(20)
-			value -= 20
-		else:
-			break
 
 func get_total_money() -> int:
 	var total := 0
@@ -147,7 +142,7 @@ func get_total_money() -> int:
 	return total
 
 func _on_interact_button_down() -> void:
-	create_drag_cedula()
+	if can_pick_money : create_drag_cedula()
 	
 func create_drag_cedula():
 	var cedula = money.pop_front()
@@ -157,6 +152,14 @@ func create_drag_cedula():
 			cedula = preload("res://Code/Resources/Database/cedula_cin.tres").duplicate()
 	elif cedula == 20:
 			cedula = preload("res://Code/Resources/Database/cedula_vin.tres").duplicate()
+	elif cedula == 10:
+			cedula = preload("res://Code/Resources/Database/cedula_dez.tres").duplicate()
+	elif cedula == 5:
+			cedula = preload("res://Code/Resources/Database/cedula_cinc.tres").duplicate()
+	elif cedula == 2:
+			cedula = preload("res://Code/Resources/Database/cedula_doi.tres").duplicate()
+	elif cedula == 200:
+			cedula = preload("res://Code/Resources/Database/cedula_duz.tres").duplicate()
 	else:
 			stress += 20
 			return
@@ -196,10 +199,10 @@ func bank_client_withdraw_setup():
 	%tex_icon.texture = withdraw_icon
 	#setup value
 	can_drop_money = true
-	if value == 0:
+	if value.is_empty():
 		generate_random_money()
 	else:
-		gemerate_money()
+		money = value.duplicate()
 	update_money_display()
 	withdraw_value = get_total_money()
 	
@@ -210,9 +213,15 @@ func _can_drop_data(_at_position: Vector2, data) -> bool:
 		return false
 	
 func _drop_data(_at_position: Vector2, data) -> void:
+	data.can_return = false
 	if category == 'withdraw':
-		withdraw_value -= data.item.value
+		withdraw_value -= data.item.value * data.item.amount
+		data.item.emit_signal('droped', null)
 		%lb_value.text = "%03d" % withdraw_value
-		print('dropei')
+		if withdraw_value <= 0:
+			call_event()
+		if withdraw_value < 0:
+			emit_signal('loss_money', withdraw_value)
+			emit_signal('stressfull')
 	
 	

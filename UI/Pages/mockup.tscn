@@ -206,8 +206,8 @@ offset_right = 268.0
 offset_bottom = 197.0
 
 [node name="GridContainer" type="GridContainer" parent="Mockup/PanelContainer/ScrollContainer"]
-offset_right = 257.0
-offset_bottom = 291.0
+offset_right = 242.0
+offset_bottom = 251.0
 columns = 3
 
 [node name="ClientButton" parent="Mockup/PanelContainer/ScrollContainer/GridContainer" instance=ExtResource("3_dx4aq")]

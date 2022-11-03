@@ -1,4 +1,4 @@
+Item (item.gd)
 FontVariation
 AtlasTexture
-Item (item.gd)
 Resource

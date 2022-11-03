@@ -12,6 +12,6 @@ signal droped(droped_slot : ItemContainer)
 @export var category : String #(money, product)
 @export_subgroup('Financial')
 @export var amount : int = 1
-@export_range(0 , 100, 0.25) var value : float = 0
+@export_range(0 , 200, 0.25) var value : float = 0
 
 

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cqgyadqtgpmvx"]
+
+[ext_resource type="Script" path="res://Code/Resources/Prefabs/item.gd" id="1_mdp2m"]
+[ext_resource type="Texture2D" uid="uid://bwk1gpb2n6obl" path="res://Art/Itens/cedula_10.tres" id="2_1puaf"]
+
+[resource]
+script = ExtResource("1_mdp2m")
+code = "Cedula Dez"
+texture = ExtResource("2_1puaf")
+category = "money"
+amount = 1
+value = 10.0

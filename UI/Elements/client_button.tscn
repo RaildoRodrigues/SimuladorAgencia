@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://bv20pdakxokv8"]
+[gd_scene load_steps=11 format=3 uid="uid://bv20pdakxokv8"]
 
-[ext_resource type="Theme" uid="uid://dpq7qpl5pwq8i" path="res://Art/Theme/client_RG.theme" id="1_f22la"]
 [ext_resource type="Script" path="res://Code/UI/client_control.gd" id="1_ncb0x"]
 [ext_resource type="Texture2D" uid="uid://b4eevwghux1yt" path="res://Art/Icons/deposit_icon.tres" id="2_1ugxr"]
 [ext_resource type="Texture2D" uid="uid://bikuvj8x6rojn" path="res://Art/Avatars/velho_avatar.tres" id="3_gfsi8"]
@@ -72,16 +71,13 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-mouse_filter = 1
-theme = ExtResource("1_f22la")
 script = ExtResource("1_ncb0x")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
-offset_left = 5.0
-offset_top = 8.0
-offset_right = 79.0
-offset_bottom = 47.0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 78.0
+offset_bottom = 45.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
@@ -91,7 +87,6 @@ theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
 offset_right = 74.0
 offset_bottom = 39.0
 size_flags_horizontal = 4
@@ -101,7 +96,6 @@ theme_override_constants/separation = 0
 alignment = 1
 
 [node name="MoneyClientPanel" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
 offset_right = 32.0
 offset_bottom = 39.0
 mouse_filter = 2
@@ -110,7 +104,6 @@ alignment = 1
 
 [node name="tex_icon" type="TextureRect" parent="MarginContainer/HBoxContainer/MoneyClientPanel"]
 unique_name_in_owner = true
-layout_mode = 2
 offset_left = 4.0
 offset_right = 28.0
 offset_bottom = 24.0
@@ -121,7 +114,6 @@ texture = ExtResource("2_1ugxr")
 [node name="lb_value" type="Label" parent="MarginContainer/HBoxContainer/MoneyClientPanel"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2i(32, 0)
-layout_mode = 2
 offset_top = 24.0
 offset_right = 32.0
 offset_bottom = 39.0
@@ -130,7 +122,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
 offset_left = 32.0
 offset_right = 66.0
 offset_bottom = 39.0
@@ -138,7 +129,6 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gn67c")
 
 [node name="tex_avatar" type="TextureRect" parent="MarginContainer/HBoxContainer/PanelContainer"]
-layout_mode = 2
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 33.0
@@ -148,7 +138,6 @@ texture = ExtResource("3_gfsi8")
 stretch_mode = 3
 
 [node name="lb_order" type="Label" parent="MarginContainer/HBoxContainer/PanelContainer/tex_avatar"]
-layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -165,7 +154,6 @@ horizontal_alignment = 2
 unique_name_in_owner = true
 modulate = Color(0.184314, 0.419608, 0.196078, 1)
 custom_minimum_size = Vector2i(8, 0)
-layout_mode = 2
 offset_left = 66.0
 offset_right = 74.0
 offset_bottom = 39.0
@@ -179,8 +167,6 @@ show_percentage = false
 
 [node name="Interact" type="Button" parent="MarginContainer"]
 unique_name_in_owner = true
-visible = false
-layout_mode = 2
 offset_right = 74.0
 offset_bottom = 39.0
 mouse_filter = 1
