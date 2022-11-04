@@ -10,7 +10,7 @@ var client_pool = []
 var spawn_interval = 10
 
 func _ready() -> void:
-	start_level_1()
+	start_level_3()
 
 
 func start_level_1():
@@ -22,7 +22,30 @@ func start_level_1():
 	create_client(client_pool.pop_back())
 	create_client(client_pool.pop_back())
 	%SpawnTimer.start(spawn_interval)
-	
+
+func start_level_2():
+	gaveta.set_gaveta([1,2,4])
+	client_pool = generate_bank_client_pool(4, 'normal', 2)
+	client_pool += generate_bank_client_pool(1, 'hard')
+	client_pool.shuffle()
+	create_client(client_pool.pop_back())
+	create_client(client_pool.pop_back())
+	create_client(client_pool.pop_back())
+	%SpawnTimer.start(spawn_interval)
+
+func start_level_3():
+	gaveta.set_gaveta([1,2])
+	client_pool = generate_bank_client_pool(6, 'normal', 3)
+	client_pool += generate_bank_client_pool(2, 'hard')
+	client_pool.shuffle()
+	var boss_client = {}
+	boss_client.category = 'deposit'
+	boss_client.value = [200,200,200,200,200,100,100,100,100,100,100,100,100,100,100]
+	client_pool.append(boss_client)
+	create_client(client_pool.pop_back())
+	create_client(client_pool.pop_back())
+	create_client(client_pool.pop_back())
+	%SpawnTimer.start(spawn_interval)
 
 
 

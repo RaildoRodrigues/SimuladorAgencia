@@ -1,0 +1,46 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://d32v4ipfxwwuj"]
+
+[ext_resource type="Texture2D" uid="uid://d1bobcqthhpp0" path="res://Art/UI/atlas_ui.png" id="1_ctcug"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bgac2"]
+texture = ExtResource("1_ctcug")
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 4.0
+margin_bottom = 7.0
+region_rect = Rect2(32, 160, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_17ean"]
+texture = ExtResource("1_ctcug")
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 4.0
+margin_bottom = 7.0
+region_rect = Rect2(32, 128, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j46rv"]
+texture = ExtResource("1_ctcug")
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 4.0
+margin_bottom = 7.0
+region_rect = Rect2(0, 128, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0006x"]
+texture = ExtResource("1_ctcug")
+margin_left = 4.0
+margin_top = 7.0
+margin_right = 4.0
+margin_bottom = 4.0
+region_rect = Rect2(0, 160, 32, 32)
+
+[resource]
+default_font_size = 32
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(0.87451, 0.87451, 0.87451, 0)
+Button/colors/font_outline_color = Color(0.09351, 0.27, 0.0702, 1)
+Button/constants/outline_size = 8
+Button/styles/disabled = SubResource("StyleBoxTexture_bgac2")
+Button/styles/hover = SubResource("StyleBoxTexture_17ean")
+Button/styles/normal = SubResource("StyleBoxTexture_j46rv")
+Button/styles/pressed = SubResource("StyleBoxTexture_0006x")

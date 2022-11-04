@@ -83,7 +83,7 @@ func _on_stress_timer_timeout() -> void:
 		
 func _on_wait_timer_timeout() -> void:
 	stress += passive_stress
-	%WaitTimer.start(10)
+	%WaitTimer.start(3)
 	
 func intro_animation():
 	var start_color = Color.WHITE

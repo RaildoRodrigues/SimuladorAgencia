@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://dooi3kubxtolb"]
+
+[ext_resource type="Theme" uid="uid://d32v4ipfxwwuj" path="res://Art/Theme/MenuThemes.tres" id="1_vj5lb"]
+[ext_resource type="Texture2D" uid="uid://culjxl0xdk7bi" path="res://Art/BGs/Agency_moveis.png" id="2_rf4l7"]
+
+[node name="MainMenu" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vj5lb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rf4l7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+offset_right = 158.0
+offset_bottom = 44.0
+text = "Iniciar"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+offset_top = 48.0
+offset_right = 158.0
+offset_bottom = 92.0
+disabled = true
+text = "Tutorial"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+offset_top = 96.0
+offset_right = 158.0
+offset_bottom = 140.0
+text = "Sair"

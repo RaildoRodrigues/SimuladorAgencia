@@ -10,26 +10,23 @@ offset_bottom = 480.0
 script = ExtResource("1_ntanf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 268.0
-offset_bottom = 172.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 266.0
+offset_bottom = 204.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
-custom_minimum_size = Vector2i(0, 170)
-layout_mode = 2
-offset_left = 127.0
-offset_right = 139.0
-offset_bottom = 170.0
+custom_minimum_size = Vector2i(0, 200)
+offset_left = 125.0
+offset_right = 137.0
+offset_bottom = 200.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 horizontal_scroll_mode = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ScrollContainer"]
-layout_mode = 2
 offset_right = 12.0
-offset_bottom = 170.0
+offset_bottom = 200.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_left = 2
@@ -39,13 +36,12 @@ theme_override_constants/margin_bottom = 2
 
 [node name="ClientsGrid" type="GridContainer" parent="MarginContainer/ScrollContainer/MarginContainer"]
 unique_name_in_owner = true
-layout_mode = 2
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 10.0
-offset_bottom = 168.0
-theme_override_constants/h_separation = 4
-theme_override_constants/v_separation = 4
+offset_bottom = 198.0
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
 columns = 3
 
 [node name="SpawnTimer" type="Timer" parent="."]
