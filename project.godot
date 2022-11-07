@@ -41,7 +41,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Transition="*res://UI/Pages/transition_code.tscn"
+Game="*res://UI/Pages/game_controller.tscn"
 
 [display]
 

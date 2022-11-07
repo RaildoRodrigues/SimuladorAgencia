@@ -23,4 +23,4 @@ func _on_bt_hide_gaveta_toggled(button_pressed: bool) -> void:
 
 
 func _on_bt_exit_button_up() -> void:
-	get_tree().quit()
+	Game.change_to_menu("res://UI/Pages/level_menu.tscn")

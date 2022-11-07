@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Code/UI/client_panel.gd" id="1_ntanf"]
 
-[node name="ClientPanel" type="PanelContainer"]
+[node name="ClientPanel" type="PanelContainer" groups=["client_panel"]]
 texture_filter = 1
 offset_top = 310.0
 offset_right = 270.0
@@ -10,7 +10,6 @@ offset_bottom = 480.0
 script = ExtResource("1_ntanf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 266.0
@@ -18,7 +17,6 @@ offset_bottom = 204.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2i(0, 200)
-layout_mode = 2
 offset_left = 125.0
 offset_right = 137.0
 offset_bottom = 200.0
@@ -27,7 +25,6 @@ size_flags_vertical = 4
 horizontal_scroll_mode = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ScrollContainer"]
-layout_mode = 2
 offset_right = 12.0
 offset_bottom = 200.0
 size_flags_horizontal = 3
@@ -39,7 +36,6 @@ theme_override_constants/margin_bottom = 2
 
 [node name="ClientsGrid" type="GridContainer" parent="MarginContainer/ScrollContainer/MarginContainer"]
 unique_name_in_owner = true
-layout_mode = 2
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 10.0
@@ -55,7 +51,6 @@ one_shot = true
 [node name="VictoryTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 one_shot = true
-autostart = true
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="VictoryTimer" to="." method="_on_victory_timer_timeout"]

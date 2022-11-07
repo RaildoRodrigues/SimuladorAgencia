@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_bt_start_button_up() -> void:
 	var main_level = "res://UI/Pages/level_menu.tscn"
-	Transition.change_scene(main_level)
+	Game.change_to_menu(main_level)
 
 
 func _on_bt_exit_button_up() -> void:

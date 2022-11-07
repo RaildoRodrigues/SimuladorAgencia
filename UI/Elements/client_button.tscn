@@ -184,7 +184,7 @@ show_percentage = false
 
 [node name="StressTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 15.0
+wait_time = 10.0
 autostart = true
 
 [node name="Anim" type="AnimationPlayer" parent="."]
@@ -195,7 +195,7 @@ libraries = {
 
 [node name="WaitTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 60.0
+wait_time = 30.0
 one_shot = true
 autostart = true
 

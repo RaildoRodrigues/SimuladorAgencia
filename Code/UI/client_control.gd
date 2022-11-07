@@ -11,6 +11,7 @@ var frames = {'doc' : preload("res://Art/Theme/client_DOC.theme"),
 
 #editables
 var category = 'random'
+var difficult = 'random'
 var value = [100]
 var potrait = 'generate'
 var events = []
@@ -18,6 +19,7 @@ var passive_stress = 10
 
 
 var client_configs = {
+	difficult = difficult,
 	category = category,
 	value = value,
 	potrait = potrait,
@@ -50,6 +52,7 @@ signal loss_money(amount)
 
 func setup(_client_configs = client_configs) -> void:
 	client_configs.merge(_client_configs, true)
+	difficult = client_configs.difficult
 	category =client_configs.category
 	value = client_configs.value
 	potrait = client_configs.potrait
