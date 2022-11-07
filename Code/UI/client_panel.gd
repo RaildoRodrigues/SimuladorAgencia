@@ -4,18 +4,18 @@ extends PanelContainer
 @onready var ClientPack = preload("res://UI/Elements/client_button.tscn")
 @onready var gaveta = get_tree().get_first_node_in_group('gaveta')
 
-signal clients_ended
 
-var client_pool = []
+var dispached_clients = 0
+var client_pool : Array = []
 var spawn_interval = 10
 
 func _ready() -> void:
-	start_level_3()
+	start_level_1()
 
 
 func start_level_1():
 	gaveta.set_gaveta([8,7,6])
-	client_pool = generate_bank_client_pool(4, 'easy', 2)
+	client_pool = generate_bank_client_pool(1, 'easy', 2)
 	client_pool += generate_bank_client_pool(1, 'normal')
 	client_pool.shuffle()
 	create_client(client_pool.pop_back())
@@ -53,17 +53,36 @@ func create_client(client_config):
 	var new_client =  ClientPack.instantiate()
 	var stress_ometer = get_tree().get_first_node_in_group('main_stress_bar')
 	new_client.connect('stressfull', stress_ometer.stress)
+	new_client.connect('dispached', next_client)
 	%ClientsGrid.add_child(new_client)
 	new_client.setup(client_config)
 
-func _on_spawn_timer_timeout() -> void:
+
+func next_client():
+	if not client_pool.is_empty():
+		spawn_client()
+		%SpawnTimer.start(spawn_interval)
+		
+func _on_victory_timer_timeout() -> void:
+	if client_pool.is_empty() and %ClientsGrid.get_child_count() == 0:
+		print('clients ended')
+	else:
+		%VictoryTimer.start(1)
+	
+	
+func spawn_client():
 	var new_client = client_pool.pop_back()
 	if new_client:
+		dispached_clients += 1
 		create_client(new_client)
 		%SpawnTimer.start(spawn_interval)
-	else:
-		emit_signal('clients_ended')
-	
+
+
+
+
+func _on_spawn_timer_timeout() -> void:
+	spawn_client()
+	%SpawnTimer.start(spawn_interval)
 
 func generate_bank_client_pool(_amount, _difficult, prop = 1) -> Array:
 	var pool : Array = []
@@ -82,7 +101,6 @@ func generate_bank_client_pool(_amount, _difficult, prop = 1) -> Array:
 		new_client.value = wallet
 		pool.append(new_client)
 	return pool
-
 
 func generate_money_pool(_amount, _difficult, prop = 1) -> Array: #[withdrawpool, pepositpool]
 	var withdraw_pool = []
@@ -164,3 +182,6 @@ func wallet_sum(wallet : Array) -> int:
 	for _money in wallet:
 		total += _money
 	return total
+
+
+

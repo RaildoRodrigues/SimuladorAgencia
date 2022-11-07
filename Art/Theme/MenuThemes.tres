@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://d32v4ipfxwwuj"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://d32v4ipfxwwuj"]
 
 [ext_resource type="Texture2D" uid="uid://d1bobcqthhpp0" path="res://Art/UI/atlas_ui.png" id="1_ctcug"]
 
@@ -34,6 +34,9 @@ margin_right = 4.0
 margin_bottom = 4.0
 region_rect = Rect2(0, 160, 32, 32)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ac3ey"]
+bg_color = Color(0, 0, 0, 0.376471)
+
 [resource]
 default_font_size = 32
 Button/colors/font_color = Color(1, 1, 1, 1)
@@ -44,3 +47,4 @@ Button/styles/disabled = SubResource("StyleBoxTexture_bgac2")
 Button/styles/hover = SubResource("StyleBoxTexture_17ean")
 Button/styles/normal = SubResource("StyleBoxTexture_j46rv")
 Button/styles/pressed = SubResource("StyleBoxTexture_0006x")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_ac3ey")

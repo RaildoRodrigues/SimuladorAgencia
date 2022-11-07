@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends MarginContainer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,3 +20,7 @@ func _on_bt_hide_clients_button_up() -> void:
 
 func _on_bt_hide_gaveta_toggled(button_pressed: bool) -> void:
 	%GavetaPanel.visible = button_pressed
+
+
+func _on_bt_exit_button_up() -> void:
+	get_tree().quit()

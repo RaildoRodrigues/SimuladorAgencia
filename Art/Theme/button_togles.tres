@@ -1,0 +1,55 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cclduh6n6rtr6"]
+
+[ext_resource type="Texture2D" uid="uid://d1bobcqthhpp0" path="res://Art/UI/atlas_ui.png" id="1_ctcug"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bjxqc"]
+texture = ExtResource("1_ctcug")
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 4.0
+margin_bottom = 7.0
+region_rect = Rect2(64, 128, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pts2d"]
+texture = ExtResource("1_ctcug")
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 4.0
+margin_bottom = 7.0
+region_rect = Rect2(64, 128, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j46rv"]
+texture = ExtResource("1_ctcug")
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 4.0
+margin_bottom = 7.0
+region_rect = Rect2(64, 128, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0006x"]
+texture = ExtResource("1_ctcug")
+margin_left = 4.0
+margin_top = 7.0
+margin_right = 4.0
+margin_bottom = 4.0
+region_rect = Rect2(64, 160, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fr62u"]
+texture = ExtResource("1_ctcug")
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 6.0
+margin_bottom = 6.0
+region_rect = Rect2(96, 0, 64, 64)
+
+[resource]
+default_font_size = 32
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(0.87451, 0.87451, 0.87451, 0)
+Button/colors/font_outline_color = Color(0.09351, 0.27, 0.0702, 1)
+Button/constants/outline_size = 8
+Button/styles/disabled = SubResource("StyleBoxTexture_bjxqc")
+Button/styles/hover = SubResource("StyleBoxTexture_pts2d")
+Button/styles/normal = SubResource("StyleBoxTexture_j46rv")
+Button/styles/pressed = SubResource("StyleBoxTexture_0006x")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_fr62u")

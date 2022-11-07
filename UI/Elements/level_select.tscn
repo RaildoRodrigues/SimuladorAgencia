@@ -1,0 +1,336 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3l6wjrbwts4i"]
+
+[ext_resource type="Texture2D" uid="uid://d1bobcqthhpp0" path="res://Art/UI/atlas_ui.png" id="1_8h75l"]
+[ext_resource type="PackedScene" uid="uid://7io2dcw15h3u" path="res://UI/Elements/level_button.tscn" id="2_tmag4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vd4kl"]
+texture = ExtResource("1_8h75l")
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 6.0
+margin_bottom = 6.0
+region_rect = Rect2(128, 128, 64, 64)
+
+[sub_resource type="Theme" id="Theme_3837y"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_vd4kl")
+
+[node name="LevelSelect" type="PanelContainer"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -10.0
+offset_right = 4.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_3837y")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 322.0
+offset_bottom = 364.0
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 304.0
+offset_bottom = 346.0
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 16
+columns = 4
+
+[node name="level_button_01" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 64.0
+offset_bottom = 54.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="level_button_02" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 76.0
+offset_top = 0.0
+offset_right = 140.0
+offset_bottom = 54.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "02"
+
+[node name="level_button_03" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 152.0
+offset_top = 0.0
+offset_right = 216.0
+offset_bottom = 54.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "03"
+
+[node name="level_button_04" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 228.0
+offset_top = 0.0
+offset_right = 292.0
+offset_bottom = 54.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "04"
+
+[node name="level_button_05" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 70.0
+offset_right = 64.0
+offset_bottom = 124.0
+grow_horizontal = 1
+grow_vertical = 1
+disabled = true
+text = "05"
+
+[node name="level_button_06" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 76.0
+offset_top = 70.0
+offset_right = 140.0
+offset_bottom = 124.0
+grow_horizontal = 1
+grow_vertical = 1
+disabled = true
+text = "06"
+
+[node name="level_button_07" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 152.0
+offset_top = 70.0
+offset_right = 216.0
+offset_bottom = 124.0
+grow_horizontal = 1
+grow_vertical = 1
+disabled = true
+text = "07"
+
+[node name="level_button_08" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 228.0
+offset_top = 70.0
+offset_right = 292.0
+offset_bottom = 124.0
+grow_horizontal = 1
+grow_vertical = 1
+disabled = true
+text = "08"
+
+[node name="level_button_09" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 140.0
+offset_right = 64.0
+offset_bottom = 194.0
+grow_horizontal = 1
+grow_vertical = 1
+disabled = true
+text = "09"
+
+[node name="level_button_10" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 76.0
+offset_top = 140.0
+offset_right = 140.0
+offset_bottom = 194.0
+grow_horizontal = 1
+grow_vertical = 1
+disabled = true
+text = "10"
+
+[node name="level_button_11" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 152.0
+offset_top = 140.0
+offset_right = 216.0
+offset_bottom = 194.0
+grow_horizontal = 1
+grow_vertical = 1
+disabled = true
+text = "11"
+
+[node name="level_button_12" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 228.0
+offset_top = 140.0
+offset_right = 292.0
+offset_bottom = 194.0
+grow_horizontal = 1
+grow_vertical = 1
+disabled = true
+text = "12"
+
+[node name="level_button_13" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 210.0
+offset_right = 64.0
+offset_bottom = 264.0
+grow_horizontal = 1
+grow_vertical = 1
+disabled = true
+text = "13"
+
+[node name="level_button_14" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 76.0
+offset_top = 210.0
+offset_right = 140.0
+offset_bottom = 264.0
+grow_horizontal = 1
+grow_vertical = 1
+disabled = true
+text = "14"
+
+[node name="level_button_15" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 152.0
+offset_top = 210.0
+offset_right = 216.0
+offset_bottom = 264.0
+grow_horizontal = 1
+grow_vertical = 1
+disabled = true
+text = "15"
+
+[node name="level_button_16" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 228.0
+offset_top = 210.0
+offset_right = 292.0
+offset_bottom = 264.0
+grow_horizontal = 1
+grow_vertical = 1
+disabled = true
+text = "16"
+
+[node name="level_button_17" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 280.0
+offset_right = 64.0
+offset_bottom = 334.0
+grow_horizontal = 1
+grow_vertical = 1
+disabled = true
+text = "17"
+
+[node name="level_button_18" parent="MarginContainer/GridContainer" instance=ExtResource("2_tmag4")]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 76.0
+offset_top = 280.0
+offset_right = 140.0
+offset_bottom = 334.0
+grow_horizontal = 1
+grow_vertical = 1
+disabled = true
+text = "18"

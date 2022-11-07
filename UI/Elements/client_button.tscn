@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bv20pdakxokv8"]
+[gd_scene load_steps=14 format=3 uid="uid://bv20pdakxokv8"]
 
 [ext_resource type="Theme" uid="uid://dpq7qpl5pwq8i" path="res://Art/Theme/client_RG.theme" id="1_bpooi"]
 [ext_resource type="Script" path="res://Code/UI/client_control.gd" id="1_ncb0x"]
 [ext_resource type="Texture2D" uid="uid://b4eevwghux1yt" path="res://Art/Icons/deposit_icon.tres" id="2_1ugxr"]
 [ext_resource type="Texture2D" uid="uid://bikuvj8x6rojn" path="res://Art/Avatars/velho_avatar.tres" id="3_gfsi8"]
 [ext_resource type="Theme" uid="uid://csiw6phueu4uv" path="res://Art/Theme/hidden_button.tres" id="4_nbg4w"]
+[ext_resource type="Texture2D" uid="uid://d1bobcqthhpp0" path="res://Art/UI/atlas_ui.png" id="5_vaiyo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gn67c"]
 bg_color = Color(0.898039, 0.898039, 0.898039, 1)
@@ -17,8 +18,10 @@ border_color = Color(0.490196, 0.490196, 0.490196, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_no1pp"]
 bg_color = Color(0.478431, 0.478431, 0.478431, 0.478431)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q2no"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0a4cs"]
+texture = ExtResource("5_vaiyo")
+axis_stretch_vertical = 1
+region_rect = Rect2(17, 279, 15, 4)
 
 [sub_resource type="Animation" id="Animation_m4cmy"]
 length = 0.001
@@ -175,8 +178,7 @@ offset_bottom = 50.0
 size_flags_vertical = 1
 mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_no1pp")
-theme_override_styles/fill = SubResource("StyleBoxFlat_6q2no")
-value = 3.0
+theme_override_styles/fill = SubResource("StyleBoxTexture_0a4cs")
 fill_mode = 3
 show_percentage = false
 

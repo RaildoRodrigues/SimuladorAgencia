@@ -63,7 +63,7 @@ func setup(_client_configs = client_configs) -> void:
 			theme = frames.papper
 			bank_client_deposit_setup()
 		'withdraw':
-			theme = choose([frames.rg, frames.doc])
+			theme = choose([frames.rg,frames.rg,frames.rg,frames.rg, frames.doc])
 			bank_client_withdraw_setup()
 				
 	

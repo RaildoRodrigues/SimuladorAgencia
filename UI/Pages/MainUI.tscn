@@ -1,21 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://duyhdsami7dkh"]
+[gd_scene load_steps=15 format=3 uid="uid://duyhdsami7dkh"]
 
 [ext_resource type="PackedScene" uid="uid://ctbo4x1hk7aud" path="res://UI/Elements/gaveta_panel.tscn" id="1_cgcdd"]
 [ext_resource type="Texture2D" uid="uid://culjxl0xdk7bi" path="res://Art/BGs/Agency_moveis.png" id="1_vhibi"]
 [ext_resource type="Script" path="res://Code/UI/panels_control.gd" id="2_4g1mf"]
 [ext_resource type="PackedScene" uid="uid://chxq67xhtbuah" path="res://UI/Elements/product_slot.tscn" id="2_k1dr8"]
 [ext_resource type="PackedScene" uid="uid://cwfr57yfemtfn" path="res://UI/Elements/client_panel.tscn" id="3_37dsv"]
+[ext_resource type="PackedScene" uid="uid://dslpf5i1ykwfe" path="res://UI/Elements/stress_ometer.tscn" id="3_eqel8"]
+[ext_resource type="Texture2D" uid="uid://cchoycmuh3jx" path="res://Art/Icons/pause_icon.tres" id="4_avbf3"]
 [ext_resource type="Theme" uid="uid://d32v4ipfxwwuj" path="res://Art/Theme/MenuThemes.tres" id="5_1c3i4"]
 [ext_resource type="Texture2D" uid="uid://bi5boivo86y8h" path="res://Art/Icons/hide_icon.tres" id="5_1jkgj"]
 [ext_resource type="Texture2D" uid="uid://6x27idddx8c5" path="res://Art/Icons/gaveta_icon.tres" id="6_npanl"]
+[ext_resource type="Theme" uid="uid://cclduh6n6rtr6" path="res://Art/Theme/button_togles.tres" id="6_t4603"]
 [ext_resource type="ButtonGroup" uid="uid://btaep1sevxhes" path="res://UI/Elements/services_button_group.tres" id="7_4xyce"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ir33"]
-bg_color = Color(0, 0, 0, 0.380392)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+[ext_resource type="Texture2D" uid="uid://ckg7372s7ik5y" path="res://Art/Icons/product_icon.tres" id="9_7sgod"]
+[ext_resource type="Texture2D" uid="uid://13vgh72kjful" path="res://Art/Icons/view_icon.tres" id="10_d8vw3"]
 
 [node name="Agency" type="TextureRect"]
 texture_filter = 1
@@ -26,48 +24,64 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_vhibi")
 
-[node name="Panels" type="VBoxContainer" parent="."]
+[node name="Panels" type="MarginContainer" parent="."]
 texture_filter = 1
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 2
 script = ExtResource("2_4g1mf")
 
-[node name="AgencyPanel" type="HBoxContainer" parent="Panels"]
-layout_mode = 2
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panels"]
 offset_right = 360.0
-offset_bottom = 377.0
-size_flags_vertical = 3
+offset_bottom = 640.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panels/VBoxContainer2"]
+offset_right = 360.0
+offset_bottom = 35.0
+
+[node name="bt_exit" type="Button" parent="Panels/VBoxContainer2/HBoxContainer"]
+offset_right = 32.0
+offset_bottom = 35.0
+theme = ExtResource("5_1c3i4")
+icon = ExtResource("4_avbf3")
+
+[node name="AgencyPanel" type="HBoxContainer" parent="Panels/VBoxContainer2"]
+offset_top = 39.0
+offset_right = 360.0
+offset_bottom = 359.0
+size_flags_vertical = 0
 theme_override_constants/separation = 0
 
-[node name="ServicesPanel" type="VBoxContainer" parent="Panels/AgencyPanel"]
-layout_mode = 2
-offset_right = 328.0
-offset_bottom = 377.0
+[node name="StressOmeter" parent="Panels/VBoxContainer2/AgencyPanel" instance=ExtResource("3_eqel8")]
+offset_right = 41.0
+offset_bottom = 320.0
+
+[node name="ServicesPanel" type="VBoxContainer" parent="Panels/VBoxContainer2/AgencyPanel"]
+offset_left = 41.0
+offset_top = 320.0
+offset_right = 316.0
+offset_bottom = 320.0
 size_flags_horizontal = 3
+size_flags_vertical = 8
 alignment = 1
 
-[node name="GavetaPanel" parent="Panels/AgencyPanel/ServicesPanel" instance=ExtResource("1_cgcdd")]
+[node name="GavetaPanel" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel" instance=ExtResource("1_cgcdd")]
 unique_name_in_owner = true
-layout_mode = 2
-offset_top = 0.0
-offset_right = 328.0
-offset_bottom = 180.0
-size_flags_vertical = 2
-
-[node name="ProdutosPanel" type="PanelContainer" parent="Panels/AgencyPanel/ServicesPanel"]
 visible = false
-layout_mode = 2
+offset_top = 0.0
+offset_right = 275.0
+offset_bottom = 180.0
+size_flags_vertical = 4
+
+[node name="ProdutosPanel" type="PanelContainer" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel"]
+visible = false
 offset_top = 184.0
 offset_right = 316.0
 offset_bottom = 455.0
 
-[node name="MarginContainer" type="MarginContainer" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel"]
-layout_mode = 2
+[node name="MarginContainer" type="MarginContainer" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel"]
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 312.0
@@ -77,23 +91,20 @@ theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 6
 theme_override_constants/margin_bottom = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer"]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer"]
 offset_left = 6.0
 offset_top = 6.0
 offset_right = 302.0
 offset_bottom = 245.0
 
-[node name="Label" type="Label" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
+[node name="Label" type="Label" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer"]
 offset_right = 296.0
 offset_bottom = 15.0
 theme_override_font_sizes/font_size = 12
 text = "GAVETA DE PRODUTOS"
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer"]
-layout_mode = 2
+[node name="GridContainer" type="GridContainer" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer"]
 offset_left = 46.0
 offset_top = 19.0
 offset_right = 250.0
@@ -102,202 +113,180 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 4
 
-[node name="ProductSlot" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
-layout_mode = 2
+[node name="ProductSlot" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
 offset_bottom = 52.0
 
-[node name="ProductSlot2" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
-layout_mode = 2
+[node name="ProductSlot2" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
 offset_left = 52.0
 offset_right = 100.0
 offset_bottom = 52.0
 
-[node name="ProductSlot3" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
-layout_mode = 2
+[node name="ProductSlot3" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
 offset_left = 104.0
 offset_right = 152.0
 offset_bottom = 52.0
 
-[node name="ProductSlot4" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
-layout_mode = 2
+[node name="ProductSlot4" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
 offset_left = 156.0
 offset_right = 204.0
 offset_bottom = 52.0
 
-[node name="ProductSlot5" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
-layout_mode = 2
+[node name="ProductSlot5" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
 offset_top = 56.0
 offset_bottom = 108.0
 
-[node name="ProductSlot6" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
-layout_mode = 2
+[node name="ProductSlot6" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
 offset_left = 52.0
 offset_top = 56.0
 offset_right = 100.0
 offset_bottom = 108.0
 
-[node name="ProductSlot7" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
-layout_mode = 2
+[node name="ProductSlot7" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
 offset_left = 104.0
 offset_top = 56.0
 offset_right = 152.0
 offset_bottom = 108.0
 
-[node name="ProductSlot8" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
-layout_mode = 2
+[node name="ProductSlot8" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
 offset_left = 156.0
 offset_top = 56.0
 offset_right = 204.0
 offset_bottom = 108.0
 
-[node name="ProductSlot9" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
-layout_mode = 2
+[node name="ProductSlot9" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
 offset_top = 112.0
 offset_bottom = 164.0
 
-[node name="ProductSlot10" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
-layout_mode = 2
+[node name="ProductSlot10" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
 offset_left = 52.0
 offset_top = 112.0
 offset_right = 100.0
 offset_bottom = 164.0
 
-[node name="ProductSlot11" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
-layout_mode = 2
+[node name="ProductSlot11" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
 offset_left = 104.0
 offset_top = 112.0
 offset_right = 152.0
 offset_bottom = 164.0
 
-[node name="ProductSlot12" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
-layout_mode = 2
+[node name="ProductSlot12" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
 offset_left = 156.0
 offset_top = 112.0
 offset_right = 204.0
 offset_bottom = 164.0
 
-[node name="ProductSlot13" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
-layout_mode = 2
+[node name="ProductSlot13" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
 offset_top = 168.0
 offset_bottom = 220.0
 
-[node name="ProductSlot14" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
-layout_mode = 2
+[node name="ProductSlot14" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
 offset_left = 52.0
 offset_top = 168.0
 offset_right = 100.0
 offset_bottom = 220.0
 
-[node name="ProductSlot15" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
-layout_mode = 2
+[node name="ProductSlot15" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
 offset_left = 104.0
 offset_top = 168.0
 offset_right = 152.0
 offset_bottom = 220.0
 
-[node name="ProductSlot16" parent="Panels/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
-layout_mode = 2
+[node name="ProductSlot16" parent="Panels/VBoxContainer2/AgencyPanel/ServicesPanel/ProdutosPanel/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_k1dr8")]
 offset_left = 156.0
 offset_top = 168.0
 offset_right = 204.0
 offset_bottom = 220.0
 
-[node name="ServiceButtons" type="PanelContainer" parent="Panels/AgencyPanel"]
-layout_mode = 2
-offset_left = 328.0
+[node name="ServiceButtons" type="PanelContainer" parent="Panels/VBoxContainer2/AgencyPanel"]
+offset_left = 316.0
 offset_right = 360.0
-offset_bottom = 188.0
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_0ir33")
+offset_bottom = 320.0
+size_flags_horizontal = 4
+theme = ExtResource("6_t4603")
 
-[node name="MarginContainer" type="MarginContainer" parent="Panels/AgencyPanel/ServiceButtons"]
-layout_mode = 2
-offset_right = 32.0
-offset_bottom = 188.0
+[node name="MarginContainer" type="MarginContainer" parent="Panels/VBoxContainer2/AgencyPanel/ServiceButtons"]
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 38.0
+offset_bottom = 314.0
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panels/AgencyPanel/ServiceButtons/MarginContainer"]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels/VBoxContainer2/AgencyPanel/ServiceButtons/MarginContainer"]
 offset_right = 32.0
-offset_bottom = 188.0
+offset_bottom = 308.0
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="bt_hide_gaveta" type="Button" parent="Panels/AgencyPanel/ServiceButtons/MarginContainer/VBoxContainer"]
-layout_mode = 2
+[node name="bt_hide_gaveta" type="Button" parent="Panels/VBoxContainer2/AgencyPanel/ServiceButtons/MarginContainer/VBoxContainer"]
+offset_top = 60.0
 offset_right = 32.0
-offset_bottom = 35.0
+offset_bottom = 95.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("5_1c3i4")
-toggle_mode = true
-button_pressed = true
-button_group = ExtResource("7_4xyce")
-icon = ExtResource("6_npanl")
-icon_alignment = 1
-
-[node name="bt_service_2" type="Button" parent="Panels/AgencyPanel/ServiceButtons/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 51.0
-offset_right = 32.0
-offset_bottom = 86.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("5_1c3i4")
 toggle_mode = true
 button_group = ExtResource("7_4xyce")
 icon = ExtResource("6_npanl")
 icon_alignment = 1
 
-[node name="bt_service_3" type="Button" parent="Panels/AgencyPanel/ServiceButtons/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 102.0
+[node name="bt_service_2" type="Button" parent="Panels/VBoxContainer2/AgencyPanel/ServiceButtons/MarginContainer/VBoxContainer"]
+offset_top = 111.0
 offset_right = 32.0
-offset_bottom = 137.0
+offset_bottom = 146.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("5_1c3i4")
 toggle_mode = true
 button_group = ExtResource("7_4xyce")
-icon = ExtResource("6_npanl")
+icon = ExtResource("9_7sgod")
 icon_alignment = 1
 
-[node name="bt_service_4" type="Button" parent="Panels/AgencyPanel/ServiceButtons/MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 153.0
+[node name="bt_service_3" type="Button" parent="Panels/VBoxContainer2/AgencyPanel/ServiceButtons/MarginContainer/VBoxContainer"]
+offset_top = 162.0
 offset_right = 32.0
-offset_bottom = 188.0
+offset_bottom = 197.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("5_1c3i4")
 toggle_mode = true
 button_group = ExtResource("7_4xyce")
-icon = ExtResource("6_npanl")
+icon = ExtResource("9_7sgod")
 icon_alignment = 1
 
-[node name="bt_hide_clients" type="Button" parent="Panels"]
-custom_minimum_size = Vector2i(64, 0)
-layout_mode = 2
-offset_left = 148.0
+[node name="bt_service_4" type="Button" parent="Panels/VBoxContainer2/AgencyPanel/ServiceButtons/MarginContainer/VBoxContainer"]
+offset_top = 213.0
+offset_right = 32.0
+offset_bottom = 248.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+button_group = ExtResource("7_4xyce")
+icon = ExtResource("10_d8vw3")
+icon_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panels"]
 offset_top = 381.0
+offset_right = 360.0
+offset_bottom = 640.0
+size_flags_vertical = 8
+
+[node name="bt_hide_clients" type="Button" parent="Panels/VBoxContainer"]
+custom_minimum_size = Vector2i(64, 0)
+offset_left = 148.0
 offset_right = 212.0
-offset_bottom = 416.0
+offset_bottom = 35.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("5_1c3i4")
 icon = ExtResource("5_1jkgj")
 icon_alignment = 1
 
-[node name="ClientPanel" parent="Panels" instance=ExtResource("3_37dsv")]
+[node name="ClientPanel" parent="Panels/VBoxContainer" instance=ExtResource("3_37dsv")]
 unique_name_in_owner = true
-layout_mode = 2
-offset_top = 420.0
+offset_top = 39.0
 offset_right = 360.0
-offset_bottom = 640.0
+offset_bottom = 259.0
 
-[connection signal="toggled" from="Panels/AgencyPanel/ServiceButtons/MarginContainer/VBoxContainer/bt_hide_gaveta" to="Panels" method="_on_bt_hide_gaveta_toggled"]
-[connection signal="button_up" from="Panels/bt_hide_clients" to="Panels" method="_on_bt_hide_clients_button_up"]
+[connection signal="button_up" from="Panels/VBoxContainer2/HBoxContainer/bt_exit" to="Panels" method="_on_bt_exit_button_up"]
+[connection signal="toggled" from="Panels/VBoxContainer2/AgencyPanel/ServiceButtons/MarginContainer/VBoxContainer/bt_hide_gaveta" to="Panels" method="_on_bt_hide_gaveta_toggled"]
+[connection signal="button_up" from="Panels/VBoxContainer/bt_hide_clients" to="Panels" method="_on_bt_hide_clients_button_up"]

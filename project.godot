@@ -33,11 +33,15 @@ _global_script_class_icons={
 [application]
 
 config/name="HellAgency"
-run/main_scene="res://UI/Pages/MainUI.tscn"
+run/main_scene="res://UI/Pages/start_menu.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 run/max_fps=60
 boot_splash/bg_color=Color(0.894118, 0.823529, 0.666667, 1)
 config/icon="res://icon.svg"
+
+[autoload]
+
+Transition="*res://UI/Pages/transition_code.tscn"
 
 [display]
 
