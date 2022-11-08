@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpfc1gboatxws"]
+
+[ext_resource type="Theme" uid="uid://bckdptaaiibn" path="res://Art/Theme/TIP_theme.tres" id="1_tvc4s"]
+[ext_resource type="Texture2D" uid="uid://prlomq5ee7oq" path="res://Art/Icons/tip_icon.tres" id="2_2awge"]
+
+[sub_resource type="Animation" id="Animation_8s2s8"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_063vt"]
+resource_name = "idle"
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4n4s2"]
+_data = {
+"RESET": SubResource("Animation_8s2s8"),
+"idle": SubResource("Animation_063vt")
+}
+
+[node name="Tip" type="PanelContainer"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_tvc4s")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 345.0
+offset_bottom = 107.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 334.0
+offset_bottom = 96.0
+mouse_filter = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+offset_left = 151.0
+offset_right = 175.0
+offset_bottom = 24.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_2awge")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+offset_top = 28.0
+offset_right = 326.0
+offset_bottom = 88.0
+mouse_filter = 0
+theme_override_constants/outline_size = 0
+text = "Muitas vezes nao ha dinheiro
+na gaveta, voce deve aguardar
+um cliente vir depositar"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_4n4s2")
+}

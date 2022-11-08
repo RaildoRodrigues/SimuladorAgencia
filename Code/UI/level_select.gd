@@ -51,7 +51,7 @@ func level_button_03():
 		basic_client.value = generate_random_wallet('normal')
 		level_pool.append(basic_client.duplicate())
 	Game.level_name = '03'
-	Game.level_tip = ""
+	Game.level_tip = "res://UI/Tips/level_03.tscn"
 	go_to_level(level_pool, level_gaveta)
 
 func level_button_04():
@@ -69,19 +69,115 @@ func level_button_04():
 	Game.level_tip = ""
 	go_to_level(level_pool)
 
+func level_button_05():
+	var level_gaveta = [30, 30]
+	var level_pool = []
+	var basic_client = {}
+	basic_client.category = 'withdraw'
+	for i in range(6):
+		basic_client.value = generate_random_wallet('easy')
+		level_pool.append(basic_client.duplicate())
+	Game.level_name = '05'
+	Game.level_tip = "res://UI/Tips/level_05.tscn"
+	go_to_level(level_pool, level_gaveta)
 
-func level_button_18():
-	var level_gaveta = [1,2]
+func level_button_06():
+	var level_gaveta = [30, 30]
+	var level_pool = []
+	var basic_client = {}
+	basic_client.category = 'withdraw'
+	for i in range(6):
+		basic_client.value = [100,100,50]
+		level_pool.append(basic_client.duplicate())
+	Game.level_name = '06'
+	Game.level_tip = "res://UI/Tips/level_06.tscn"
+	go_to_level(level_pool, level_gaveta)
+
+func level_button_07():
+	var level_gaveta = [30,30,30,30,30]
+	var level_pool = []
+	var basic_client = {}
+	basic_client.category = 'withdraw'
+	for i in range(12):
+		basic_client.value = generate_random_wallet('normal')
+		level_pool.append(basic_client.duplicate())
+	Game.level_name = '07'
+	Game.level_tip = ""
+	go_to_level(level_pool, level_gaveta)
+	
+func level_button_08():
+	var level_gaveta = [60,60,60,60,60]
+	var level_pool = []
+	var basic_client = {}
+	basic_client.category = 'withdraw'
+	for i in range(8):
+		basic_client.value = generate_random_wallet('normal')
+		level_pool.append(basic_client.duplicate())
+	for i in range(8):
+		basic_client.value = generate_random_wallet('hard')
+		level_pool.append(basic_client.duplicate())
+	level_pool.shuffle()
+	Game.level_name = '08'
+	Game.level_tip = ""
+	go_to_level(level_pool, level_gaveta)
+
+
+func level_button_09():
+	var level_pool = []
+	var basic_client = {}
+	basic_client.category = 'withdraw'
+	for i in range(4):
+		basic_client.value = generate_random_wallet('easy')
+		level_pool.append(basic_client.duplicate())
+	basic_client.category = 'deposit'
+	basic_client.value = [100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100]
+	level_pool.append(basic_client.duplicate())
+	Game.level_name = '09'
+	Game.level_tip = "res://UI/Tips/level_09.tscn"
+	go_to_level(level_pool)
+
+
+func level_button_10():
+	var level_gaveta = [5,5,5]
+	var level_pool = generate_bank_client_pool(3, 'easy', 3)
+	level_pool.shuffle()
+	var boss_client = {}
+	Game.level_name = '10'
+	Game.level_tip = ""
+	go_to_level(level_pool, level_gaveta)
+	
+func level_button_11():
+	var level_gaveta = [3,3,3]
+	var level_pool = generate_bank_client_pool(6, 'normal', 2)
+	level_pool.shuffle()
+	var boss_client = {}
+	Game.level_name = '11'
+	Game.level_tip = ""
+	go_to_level(level_pool, level_gaveta)
+	
+func level_button_12():
 	var level_pool = generate_bank_client_pool(6, 'normal', 3)
 	level_pool += generate_bank_client_pool(2, 'hard')
 	level_pool.shuffle()
 	var boss_client = {}
-	boss_client.category = 'deposit'
-	boss_client.value = [200,200,200,200,200]
-	level_pool.append(boss_client)
-	Game.level_name = '18'
+	Game.level_name = '12'
 	Game.level_tip = ""
-	go_to_level(level_pool, level_gaveta)
+	go_to_level(level_pool)
+
+
+
+#func level_button_18():
+#	var level_gaveta = [1,2]
+#	var level_pool = generate_bank_client_pool(6, 'normal', 3)
+#	level_pool += generate_bank_client_pool(2, 'hard')
+#	level_pool.shuffle()
+#	var boss_client = {}
+#	boss_client.category = 'deposit'
+#	boss_client.value = [200,200,200,200,200]
+#	level_pool.append(boss_client)
+#	Game.level_name = '18'
+#	Game.level_tip = ""
+#	go_to_level(level_pool, level_gaveta)
 	
 
 
