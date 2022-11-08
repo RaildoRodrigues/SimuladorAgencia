@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cmx3b55x4htx7"
+path="res://.godot/imported/zombie (1).ogg-e74c7c4b2001aef91c3150e9e8bb186a.oggvorbisstr"
+
+[deps]
+
+source_file="res://SFX/zombie (1).ogg"
+dest_files=["res://.godot/imported/zombie (1).ogg-e74c7c4b2001aef91c3150e9e8bb186a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

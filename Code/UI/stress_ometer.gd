@@ -8,6 +8,7 @@ func stress(amount : float = 5.0):
 	anim_tween.tween_property(self, 'value', new_amount, 0.3)
 	%Anim.stop()
 	%Anim.play('redAlert')
+	%SFX.play()
 	if value >= 100:
 		Game.change_to_menu("res://UI/Pages/defeat_screen.tscn")
 

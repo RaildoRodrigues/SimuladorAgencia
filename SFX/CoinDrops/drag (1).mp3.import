@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://donp5q4pb7cf0"
+path="res://.godot/imported/drag (1).mp3-951c5a78fd1e73cdf0a554b39d55b45f.mp3str"
+
+[deps]
+
+source_file="res://SFX/CoinDrops/drag (1).mp3"
+dest_files=["res://.godot/imported/drag (1).mp3-951c5a78fd1e73cdf0a554b39d55b45f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_bt_hide_clients_button_up() -> void:
+	%SFX2.play()
 	if %ClientPanel.visible:
 		%ClientPanel.visible = false
 	else:
@@ -19,8 +20,10 @@ func _on_bt_hide_clients_button_up() -> void:
 
 
 func _on_bt_hide_gaveta_toggled(button_pressed: bool) -> void:
+	%SFX2.play()
 	%GavetaPanel.visible = button_pressed
 
 
 func _on_bt_exit_button_up() -> void:
+	%SFX.play()
 	Game.change_to_menu("res://UI/Pages/level_menu.tscn")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnfhx72vk8820"]
+[gd_scene load_steps=5 format=3 uid="uid://cnfhx72vk8820"]
 
 [ext_resource type="Theme" uid="uid://bikqtyhuv3jgh" path="res://Art/Theme/gaveta_slot.theme" id="1_i63g2"]
 [ext_resource type="Script" path="res://Code/UI/money_slot.gd" id="1_qv8jf"]
 [ext_resource type="Theme" uid="uid://csiw6phueu4uv" path="res://Art/Theme/hidden_button.tres" id="2_b3xfo"]
+[ext_resource type="PackedScene" uid="uid://d0rlshitrapx5" path="res://Code/sfx_player.tscn" id="4_r06bi"]
 
 [node name="MoneySlot" type="PanelContainer"]
 texture_filter = 1
@@ -69,3 +70,6 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SFXPlayer" parent="." instance=ExtResource("4_r06bi")]
+unique_name_in_owner = true

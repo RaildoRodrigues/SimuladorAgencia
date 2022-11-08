@@ -39,4 +39,5 @@ func update_level_icon():
 
 
 func _on_bt_return_button_up() -> void:
+	%SFX.play()
 	Game.change_to_menu("res://UI/Pages/level_menu.tscn")

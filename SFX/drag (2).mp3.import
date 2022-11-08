@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://lbxmw8u8a7eo"
+path="res://.godot/imported/drag (2).mp3-50a94173a9cb21df703898256c1aca72.mp3str"
+
+[deps]
+
+source_file="res://SFX/drag (2).mp3"
+dest_files=["res://.godot/imported/drag (2).mp3-50a94173a9cb21df703898256c1aca72.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

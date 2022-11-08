@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dslpf5i1ykwfe"]
+[gd_scene load_steps=11 format=3 uid="uid://dslpf5i1ykwfe"]
 
 [ext_resource type="Script" path="res://Code/UI/stress_ometer.gd" id="1_nmanm"]
 [ext_resource type="Texture2D" uid="uid://d1bobcqthhpp0" path="res://Art/UI/atlas_ui.png" id="1_oiefo"]
+[ext_resource type="AudioStream" uid="uid://bwovkcr8tv75r" path="res://SFX/error.wav" id="3_nnsrd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8d433"]
 texture = ExtResource("1_oiefo")
@@ -96,6 +97,7 @@ theme_override_constants/separation = 0
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2i(16, 320)
+layout_mode = 2
 offset_right = 16.0
 offset_bottom = 320.0
 theme = SubResource("Theme_vwkp7")
@@ -113,9 +115,15 @@ libraries = {
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2i(25, 120)
+layout_mode = 2
 offset_left = 16.0
 offset_top = 200.0
 offset_right = 41.0
 offset_bottom = 320.0
 size_flags_vertical = 8
 texture = SubResource("AtlasTexture_ypimi")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_nnsrd")
+bus = &"Alert"

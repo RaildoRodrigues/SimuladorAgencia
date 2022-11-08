@@ -40,6 +40,7 @@ var stress : float = 0:
 		%Anim.stop()
 		%Anim.play('stress')
 		%stressbar.modulate = lerp(Color.ORANGE, Color.RED, _number /100)
+		%SFXPlayer.play_zombie_sound()
 		if _number >= 100 : emit_signal('stressfull')
 var can_drop_money = false
 var can_pick_money = false
@@ -143,6 +144,7 @@ func _on_interact_button_down() -> void:
 	if can_pick_money : create_drag_cedula()
 	
 func create_drag_cedula():
+	%SFXPlayer.play_drag_sound()
 	var cedula = money.pop_front()
 	if cedula == 100:
 			cedula = preload("res://Code/Resources/Database/cedula_cem.tres").duplicate()
@@ -181,7 +183,8 @@ func my_cedula_droped(_slot):
 
 func add_item(item):
 	if item is Item:
-		if item.category == 'money' : stress += 30
+		if item.category == 'money' :
+			stress += 30
 		for i in range(item.amount):
 			money.append(item.value)
 		update_money_display()
@@ -210,6 +213,7 @@ func _can_drop_data(_at_position: Vector2, data) -> bool:
 func _drop_data(_at_position: Vector2, data) -> void:
 	data.can_return = false
 	if category == 'withdraw':
+		%SFXPlayer.play_drop_sound()
 		withdraw_value -= data.item.value * data.item.amount
 		data.item.emit_signal('droped', null)
 		%lb_value.text = "%03d" % withdraw_value

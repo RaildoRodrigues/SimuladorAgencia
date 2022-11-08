@@ -1,0 +1,66 @@
+[gd_scene load_steps=12 format=3 uid="uid://d0rlshitrapx5"]
+
+[ext_resource type="Script" path="res://Code/UI/sfx_player.gd" id="1_1yrym"]
+[ext_resource type="AudioStream" uid="uid://hhnqu3j4lu80" path="res://SFX/drag (1).mp3" id="2_7kdw5"]
+[ext_resource type="AudioStream" uid="uid://d3oj2nti7pc68" path="res://SFX/drop (2).mp3" id="3_tinc7"]
+[ext_resource type="AudioStream" uid="uid://ncf62rftysi4" path="res://SFX/drop (1).mp3" id="3_u0hlm"]
+[ext_resource type="AudioStream" uid="uid://d105v50j4t1q5" path="res://SFX/drop (3).mp3" id="4_qoeyb"]
+[ext_resource type="AudioStream" uid="uid://cv8fp78jts28j" path="res://SFX/drop (4).mp3" id="5_gf0ts"]
+[ext_resource type="AudioStream" uid="uid://lbxmw8u8a7eo" path="res://SFX/drag (2).mp3" id="7_xlnr3"]
+[ext_resource type="AudioStream" uid="uid://cmx3b55x4htx7" path="res://SFX/zombie (1).ogg" id="8_s2qoe"]
+[ext_resource type="AudioStream" uid="uid://bpfnsanhbpqkq" path="res://SFX/zombie (2).ogg" id="9_uhnvn"]
+[ext_resource type="AudioStream" uid="uid://cca2ur5bnhlyy" path="res://SFX/zombie (3).ogg" id="10_0n6hs"]
+[ext_resource type="AudioStream" uid="uid://3p7mbkighhg2" path="res://SFX/zombie (4).ogg" id="11_nbob1"]
+
+[node name="SFXPlayer" type="Node"]
+script = ExtResource("1_1yrym")
+
+[node name="SFX_drop1" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_u0hlm")
+bus = &"Items"
+
+[node name="SFX_drop2" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_tinc7")
+bus = &"Items"
+
+[node name="SFX_drop3" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_qoeyb")
+bus = &"Items"
+
+[node name="SFX_drop4" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_gf0ts")
+bus = &"Items"
+
+[node name="SFX_drag1" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_7kdw5")
+bus = &"Items"
+
+[node name="SFX_drag2" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_xlnr3")
+bus = &"Items"
+
+[node name="SFX_zombie1" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("8_s2qoe")
+bus = &"Clients"
+
+[node name="SFX_zombie2" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_uhnvn")
+bus = &"Clients"
+
+[node name="SFX_zombie3" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("10_0n6hs")
+bus = &"Clients"
+
+[node name="SFX_zombie4" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("11_nbob1")
+bus = &"Clients"

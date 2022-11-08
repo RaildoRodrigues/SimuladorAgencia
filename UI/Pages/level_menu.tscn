@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgigc0kcx7ywu"]
+[gd_scene load_steps=7 format=3 uid="uid://bgigc0kcx7ywu"]
 
 [ext_resource type="Theme" uid="uid://d32v4ipfxwwuj" path="res://Art/Theme/MenuThemes.tres" id="1_8hmry"]
 [ext_resource type="Script" path="res://Code/UI/level_menu.gd" id="1_k0o81"]
 [ext_resource type="Texture2D" uid="uid://bqx5kc205hsex" path="res://Art/BGs/Agency_moveis_noite.png" id="3_onau8"]
 [ext_resource type="PackedScene" uid="uid://d3l6wjrbwts4i" path="res://UI/Elements/level_select.tscn" id="4_23l3o"]
 [ext_resource type="Texture2D" uid="uid://cxq0p7r0dlhh0" path="res://Art/Icons/return_icon.tres" id="5_tkweb"]
+[ext_resource type="AudioStream" uid="uid://58wg1vhlku4b" path="res://SFX/click.wav" id="6_jamuo"]
 
 [node name="LevelMenu" type="Control"]
 texture_filter = 1
@@ -17,6 +18,7 @@ grow_vertical = 2
 script = ExtResource("1_k0o81")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -25,6 +27,7 @@ grow_vertical = 2
 texture = ExtResource("3_onau8")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -38,6 +41,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
 offset_right = 328.0
 offset_bottom = 24.0
 theme_override_font_sizes/font_size = 20
@@ -45,6 +49,7 @@ text = "ESCOLHA O DIA"
 horizontal_alignment = 1
 
 [node name="LevelSelect" parent="TextureRect/VBoxContainer" instance=ExtResource("4_23l3o")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -58,6 +63,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
 offset_left = 116.0
 offset_top = 402.0
 offset_right = 212.0
@@ -67,10 +73,16 @@ theme = ExtResource("1_8hmry")
 
 [node name="bt_back" type="Button" parent="TextureRect/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2i(96, 48)
+layout_mode = 2
 offset_right = 96.0
 offset_bottom = 48.0
 icon = ExtResource("5_tkweb")
 icon_alignment = 1
 expand_icon = true
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_jamuo")
+bus = &"Menus"
 
 [connection signal="button_up" from="TextureRect/VBoxContainer/HBoxContainer/bt_back" to="." method="_on_bt_back_button_up"]

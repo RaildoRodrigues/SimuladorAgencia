@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dooi3kubxtolb"]
+[gd_scene load_steps=9 format=3 uid="uid://dooi3kubxtolb"]
 
 [ext_resource type="Theme" uid="uid://d32v4ipfxwwuj" path="res://Art/Theme/MenuThemes.tres" id="1_8hmry"]
 [ext_resource type="Script" path="res://Code/UI/main_menu.gd" id="2_dxk83"]
 [ext_resource type="Texture2D" uid="uid://bqx5kc205hsex" path="res://Art/BGs/Agency_moveis_noite.png" id="3_onau8"]
+[ext_resource type="AudioStream" uid="uid://58wg1vhlku4b" path="res://SFX/click.wav" id="4_bwr2c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj80u"]
 bg_color = Color(0, 0, 0, 0.427451)
@@ -224,6 +225,7 @@ theme = ExtResource("1_8hmry")
 script = ExtResource("2_dxk83")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -232,6 +234,7 @@ grow_vertical = 2
 texture = ExtResource("3_onau8")
 
 [node name="CenterContainer" type="PanelContainer" parent="TextureRect"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
@@ -246,6 +249,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_hj80u")
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect/CenterContainer"]
+layout_mode = 2
 offset_right = 195.0
 offset_bottom = 220.0
 theme_override_constants/margin_left = 16
@@ -254,6 +258,7 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/CenterContainer/MarginContainer"]
+layout_mode = 2
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 179.0
@@ -263,12 +268,14 @@ grow_vertical = 2
 alignment = 1
 
 [node name="bt_start" type="Button" parent="TextureRect/CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
 offset_right = 163.0
 offset_bottom = 44.0
 focus_neighbor_top = NodePath("../bt_exit")
 text = "Iniciar"
 
 [node name="bt_tutorial" type="Button" parent="TextureRect/CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
 offset_top = 48.0
 offset_right = 163.0
 offset_bottom = 92.0
@@ -276,6 +283,7 @@ disabled = true
 text = "Tutorial"
 
 [node name="bt_survival" type="Button" parent="TextureRect/CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
 offset_top = 96.0
 offset_right = 163.0
 offset_bottom = 140.0
@@ -283,6 +291,7 @@ disabled = true
 text = "Survival"
 
 [node name="bt_exit" type="Button" parent="TextureRect/CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
 offset_top = 144.0
 offset_right = 163.0
 offset_bottom = 188.0
@@ -294,6 +303,11 @@ autoplay = "enter"
 libraries = {
 "": SubResource("AnimationLibrary_jwwqg")
 }
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_bwr2c")
+bus = &"Menus"
 
 [connection signal="button_up" from="TextureRect/CenterContainer/MarginContainer/VBoxContainer/bt_start" to="." method="_on_bt_start_button_up"]
 [connection signal="button_up" from="TextureRect/CenterContainer/MarginContainer/VBoxContainer/bt_exit" to="." method="_on_bt_exit_button_up"]

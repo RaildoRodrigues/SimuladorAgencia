@@ -12,9 +12,11 @@ func _process(delta: float) -> void:
 
 
 func _on_bt_start_button_up() -> void:
+	%SFX.play()
 	var main_level = "res://UI/Pages/level_menu.tscn"
 	Game.change_to_menu(main_level)
 
 
 func _on_bt_exit_button_up() -> void:
+	%SFX.play()
 	get_tree().quit()

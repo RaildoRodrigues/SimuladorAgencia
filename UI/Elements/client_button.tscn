@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bv20pdakxokv8"]
+[gd_scene load_steps=15 format=3 uid="uid://bv20pdakxokv8"]
 
 [ext_resource type="Theme" uid="uid://dpq7qpl5pwq8i" path="res://Art/Theme/client_RG.theme" id="1_bpooi"]
 [ext_resource type="Script" path="res://Code/UI/client_control.gd" id="1_ncb0x"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bikuvj8x6rojn" path="res://Art/Avatars/velho_avatar.tres" id="3_gfsi8"]
 [ext_resource type="Theme" uid="uid://csiw6phueu4uv" path="res://Art/Theme/hidden_button.tres" id="4_nbg4w"]
 [ext_resource type="Texture2D" uid="uid://d1bobcqthhpp0" path="res://Art/UI/atlas_ui.png" id="5_vaiyo"]
+[ext_resource type="PackedScene" uid="uid://d0rlshitrapx5" path="res://Code/sfx_player.tscn" id="7_pbtop"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gn67c"]
 bg_color = Color(0.898039, 0.898039, 0.898039, 1)
@@ -208,6 +209,9 @@ offset_bottom = 66.0
 mouse_filter = 1
 theme = ExtResource("4_nbg4w")
 action_mode = 0
+
+[node name="SFXPlayer" parent="." instance=ExtResource("7_pbtop")]
+unique_name_in_owner = true
 
 [connection signal="timeout" from="StressTimer" to="." method="_on_stress_timer_timeout"]
 [connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]

@@ -5,6 +5,8 @@ var end_drag : String = 'return_to_slot'
 
 signal draged_out
 
+
+
 func update_drag_display(new_data):
 	data = new_data
 	if data.item:
@@ -33,3 +35,6 @@ func return_to_client(new_data):
 
 func _exit_tree() -> void:
 	call(end_drag, data)
+	
+	
+

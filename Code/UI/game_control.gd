@@ -45,6 +45,7 @@ func change_to_menu(menu : String):
 
 	
 func change_to_level(_pool, _gaveta, _interval):
+	%SFX.play()
 	level_data.pool = _pool
 	level_data.gaveta = _gaveta
 	level_data.interval = _interval
@@ -56,6 +57,7 @@ func change_to_level(_pool, _gaveta, _interval):
 
 
 func _on_bt_confirm_button_up() -> void:
+	%SFX.play()
 	var anim = get_node("Tex/Anim")
 	get_tree().change_scene_to_packed(preload("res://UI/Pages/MainUI.tscn"))
 	anim.play('fadeout')
@@ -63,6 +65,7 @@ func _on_bt_confirm_button_up() -> void:
 
 
 func _on_bt_return_button_up() -> void:
+	%SFX.play()
 	var anim = get_node("Tex/Anim")
 	anim.play('fadeout')
 	%ConfirmPanel.visible = false
