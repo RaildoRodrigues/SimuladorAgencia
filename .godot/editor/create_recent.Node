@@ -1,13 +1,14 @@
 MarginContainer
-Button
-HBoxContainer
+AnimationPlayer
+Control
+TextureRect
 Label
 VBoxContainer
 PanelContainer
+Button
+HBoxContainer
 Panel
-TextureRect
 CanvasLayer
-AnimationPlayer
 Timer
 GridContainer
 GridMap
@@ -16,7 +17,6 @@ Container
 ProgressBar
 NinePatchRect
 ScrollContainer
-Control
 TextureButton
 TabBar
 TabContainer

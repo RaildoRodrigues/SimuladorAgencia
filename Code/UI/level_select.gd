@@ -21,6 +21,7 @@ func level_button_01():
 	for i in range(6):
 		basic_client.value = generate_random_wallet('easy')
 		level_pool.append(basic_client.duplicate())
+	Game.show_confirm('01',"res://UI/Tips/level_01.tscn")
 	go_to_level(level_pool)
 
 func level_button_02():
@@ -30,6 +31,7 @@ func level_button_02():
 	for i in range(8):
 		basic_client.value = generate_random_wallet('normal')
 		level_pool.append(basic_client.duplicate())
+	Game.show_confirm('02')
 	go_to_level(level_pool)
 	
 func level_button_03():
@@ -40,6 +42,7 @@ func level_button_03():
 	for i in range(12):
 		basic_client.value = generate_random_wallet('normal')
 		level_pool.append(basic_client.duplicate())
+	Game.show_confirm('03')
 	go_to_level(level_pool, level_gaveta)
 
 func level_button_04():
@@ -53,6 +56,7 @@ func level_button_04():
 		basic_client.value = generate_random_wallet('hard')
 		level_pool.append(basic_client.duplicate())
 	level_pool.shuffle()
+	Game.show_confirm('04')
 	go_to_level(level_pool)
 
 

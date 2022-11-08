@@ -3,3 +3,14 @@ res://Art/Theme/hidden_button.tres
 res://Art/Theme/MenuThemes.tres
 res://Art/Theme/button_togles.tres
 res://Art/Theme/calendar_theme_active.tres
+res://UI/Pages/victory_screen.tscn
+res://UI/Pages/start_menu.tscn
+res://UI/Pages/game_controller.tscn
+res://Code/UI/game_control.gd
+res://Code/UI/level_select.gd
+res://UI/Tips/level_01.tscn
+res://Art/Theme/TIP_theme.tres
+res://Art/Itens/cedula_100.tres
+res://Art/Itens/cedula_50.tres
+res://Code/Resources/Database/cedula_cem.tres
+res://Code/Resources/Database/cedula_cin.tres
