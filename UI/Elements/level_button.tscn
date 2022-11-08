@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://7io2dcw15h3u"]
+[gd_scene load_steps=5 format=3 uid="uid://7io2dcw15h3u"]
 
 [ext_resource type="Theme" uid="uid://byq5jq8vux0ky" path="res://Art/Theme/calendar_theme_active.tres" id="1_ylmqo"]
+[ext_resource type="Script" path="res://Code/UI/level_button.gd" id="2_lrqf4"]
 [ext_resource type="Texture2D" uid="uid://d1bobcqthhpp0" path="res://Art/UI/atlas_ui.png" id="2_qvcvf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cv5r3"]
@@ -23,12 +24,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ylmqo")
 text = "01"
+script = ExtResource("2_lrqf4")
 
-[node name="texture" type="TextureRect" parent="."]
+[node name="tex_complete" type="TextureRect" parent="."]
+unique_name_in_owner = true
 visible = false
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = SubResource("AtlasTexture_cv5r3")

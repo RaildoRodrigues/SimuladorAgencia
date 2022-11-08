@@ -34,6 +34,7 @@ theme = SubResource("Theme_3837y")
 script = ExtResource("2_efcwu")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
 offset_left = 6.0
 offset_top = 6.0
 offset_right = 322.0
@@ -45,6 +46,7 @@ theme_override_constants/margin_bottom = 12
 
 [node name="LevelGrid" type="GridContainer" parent="MarginContainer"]
 unique_name_in_owner = true
+layout_mode = 2
 offset_left = 12.0
 offset_top = 12.0
 offset_right = 304.0
@@ -54,6 +56,7 @@ theme_override_constants/v_separation = 16
 columns = 4
 
 [node name="level_button_01" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -65,8 +68,10 @@ offset_right = 64.0
 offset_bottom = 54.0
 grow_horizontal = 1
 grow_vertical = 1
+disabled = true
 
 [node name="level_button_02" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -78,9 +83,11 @@ offset_right = 140.0
 offset_bottom = 54.0
 grow_horizontal = 1
 grow_vertical = 1
+disabled = true
 text = "02"
 
 [node name="level_button_03" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -92,9 +99,11 @@ offset_right = 216.0
 offset_bottom = 54.0
 grow_horizontal = 1
 grow_vertical = 1
+disabled = true
 text = "03"
 
 [node name="level_button_04" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -106,9 +115,11 @@ offset_right = 292.0
 offset_bottom = 54.0
 grow_horizontal = 1
 grow_vertical = 1
+disabled = true
 text = "04"
 
 [node name="level_button_05" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -124,6 +135,7 @@ disabled = true
 text = "05"
 
 [node name="level_button_06" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -139,6 +151,7 @@ disabled = true
 text = "06"
 
 [node name="level_button_07" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -154,6 +167,7 @@ disabled = true
 text = "07"
 
 [node name="level_button_08" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -169,6 +183,7 @@ disabled = true
 text = "08"
 
 [node name="level_button_09" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -184,6 +199,7 @@ disabled = true
 text = "09"
 
 [node name="level_button_10" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -199,6 +215,7 @@ disabled = true
 text = "10"
 
 [node name="level_button_11" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -214,6 +231,7 @@ disabled = true
 text = "11"
 
 [node name="level_button_12" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -229,6 +247,7 @@ disabled = true
 text = "12"
 
 [node name="level_button_13" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -244,6 +263,7 @@ disabled = true
 text = "13"
 
 [node name="level_button_14" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -259,6 +279,7 @@ disabled = true
 text = "14"
 
 [node name="level_button_15" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -274,6 +295,7 @@ disabled = true
 text = "15"
 
 [node name="level_button_16" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -289,6 +311,7 @@ disabled = true
 text = "16"
 
 [node name="level_button_17" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -304,6 +327,7 @@ disabled = true
 text = "17"
 
 [node name="level_button_18" parent="MarginContainer/LevelGrid" instance=ExtResource("2_tmag4")]
+layout_mode = 2
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0

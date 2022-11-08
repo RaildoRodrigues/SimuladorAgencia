@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://3hlq8ihst4ky"]
+[gd_scene load_steps=7 format=3 uid="uid://baxh3spdudl1"]
 
 [ext_resource type="Theme" uid="uid://bckdptaaiibn" path="res://Art/Theme/TIP_theme.tres" id="1_1wars"]
 [ext_resource type="Texture2D" uid="uid://culjxl0xdk7bi" path="res://Art/BGs/Agency_moveis.png" id="1_nyqjt"]
-[ext_resource type="Script" path="res://Code/UI/victory_screen.gd" id="2_0pd66"]
+[ext_resource type="Script" path="res://Code/UI/defeat_screen.gd" id="2_a44fe"]
 [ext_resource type="Theme" uid="uid://byq5jq8vux0ky" path="res://Art/Theme/calendar_theme_active.tres" id="4_qbm4f"]
 [ext_resource type="Theme" uid="uid://d32v4ipfxwwuj" path="res://Art/Theme/MenuThemes.tres" id="5_0tehj"]
 [ext_resource type="Texture2D" uid="uid://cxq0p7r0dlhh0" path="res://Art/Icons/return_icon.tres" id="6_vdwhw"]
@@ -16,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_1wars")
-script = ExtResource("2_0pd66")
+script = ExtResource("2_a44fe")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -42,7 +42,7 @@ grow_vertical = 2
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect/PanelContainer"]
 offset_left = 3.0
 offset_top = 3.0
-offset_right = 240.0
+offset_right = 218.0
 offset_bottom = 211.0
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
@@ -52,30 +52,30 @@ theme_override_constants/margin_bottom = 4
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/PanelContainer/MarginContainer"]
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 233.0
+offset_right = 211.0
 offset_bottom = 204.0
 
 [node name="Label" type="Label" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer"]
-offset_right = 229.0
+offset_right = 207.0
 offset_bottom = 20.0
-text = "VITORIA"
+text = "DERROTA"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer"]
 offset_top = 24.0
-offset_right = 229.0
+offset_right = 207.0
 offset_bottom = 39.0
 theme_override_font_sizes/font_size = 12
-text = "voce sobreviveu ao expediente"
+text = "voce nao suportou o stress"
 horizontal_alignment = 1
 
 [node name="lb_day" type="Button" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2i(36, 36)
-offset_left = 88.0
+offset_left = 77.0
 offset_top = 43.0
-offset_right = 140.0
+offset_right = 129.0
 offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -87,13 +87,13 @@ text = "10"
 
 [node name="HSeparator" type="HSeparator" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer"]
 offset_top = 101.0
-offset_right = 229.0
+offset_right = 207.0
 offset_bottom = 117.0
 theme_override_constants/separation = 16
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer"]
 offset_top = 121.0
-offset_right = 229.0
+offset_right = 207.0
 offset_bottom = 142.0
 
 [node name="Label" type="Label" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -106,13 +106,13 @@ text = "stress:"
 [node name="stressbar" type="ProgressBar" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 offset_left = 46.0
-offset_right = 229.0
+offset_right = 207.0
 offset_bottom = 21.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer"]
 offset_top = 146.0
-offset_right = 229.0
+offset_right = 207.0
 offset_bottom = 161.0
 
 [node name="Label" type="Label" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
@@ -130,9 +130,9 @@ theme_override_font_sizes/font_size = 12
 text = "00:00"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="TextureRect/PanelContainer/MarginContainer/VBoxContainer"]
-offset_left = 82.0
+offset_left = 71.0
 offset_top = 165.0
-offset_right = 146.0
+offset_right = 135.0
 offset_bottom = 200.0
 size_flags_horizontal = 4
 mouse_filter = 2

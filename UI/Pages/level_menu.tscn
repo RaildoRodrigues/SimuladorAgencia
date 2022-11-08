@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgigc0kcx7ywu"]
+[gd_scene load_steps=6 format=3 uid="uid://bgigc0kcx7ywu"]
 
 [ext_resource type="Theme" uid="uid://d32v4ipfxwwuj" path="res://Art/Theme/MenuThemes.tres" id="1_8hmry"]
 [ext_resource type="Script" path="res://Code/UI/level_menu.gd" id="1_k0o81"]
 [ext_resource type="Texture2D" uid="uid://bqx5kc205hsex" path="res://Art/BGs/Agency_moveis_noite.png" id="3_onau8"]
 [ext_resource type="PackedScene" uid="uid://d3l6wjrbwts4i" path="res://UI/Elements/level_select.tscn" id="4_23l3o"]
+[ext_resource type="Texture2D" uid="uid://cxq0p7r0dlhh0" path="res://Art/Icons/return_icon.tres" id="5_tkweb"]
 
 [node name="LevelMenu" type="Control"]
 texture_filter = 1
@@ -57,17 +58,19 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/VBoxContainer"]
-offset_left = 104.0
+offset_left = 116.0
 offset_top = 402.0
-offset_right = 224.0
-offset_bottom = 446.0
+offset_right = 212.0
+offset_bottom = 450.0
 size_flags_horizontal = 4
 theme = ExtResource("1_8hmry")
 
 [node name="bt_back" type="Button" parent="TextureRect/VBoxContainer/HBoxContainer"]
-offset_right = 120.0
-offset_bottom = 44.0
-text = "voltar"
+custom_minimum_size = Vector2i(96, 48)
+offset_right = 96.0
+offset_bottom = 48.0
+icon = ExtResource("5_tkweb")
 icon_alignment = 1
+expand_icon = true
 
 [connection signal="button_up" from="TextureRect/VBoxContainer/HBoxContainer/bt_back" to="." method="_on_bt_back_button_up"]

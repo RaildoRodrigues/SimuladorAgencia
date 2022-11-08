@@ -15,7 +15,7 @@ var difficult = 'random'
 var value = [100]
 var potrait = 'generate'
 var events = []
-var passive_stress = 10
+var passive_stress = 5
 
 
 var client_configs = {

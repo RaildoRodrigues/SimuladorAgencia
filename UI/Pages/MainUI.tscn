@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://chxq67xhtbuah" path="res://UI/Elements/product_slot.tscn" id="2_k1dr8"]
 [ext_resource type="PackedScene" uid="uid://cwfr57yfemtfn" path="res://UI/Elements/client_panel.tscn" id="3_37dsv"]
 [ext_resource type="PackedScene" uid="uid://dslpf5i1ykwfe" path="res://UI/Elements/stress_ometer.tscn" id="3_eqel8"]
-[ext_resource type="Texture2D" uid="uid://cchoycmuh3jx" path="res://Art/Icons/pause_icon.tres" id="4_avbf3"]
+[ext_resource type="Texture2D" uid="uid://cxq0p7r0dlhh0" path="res://Art/Icons/return_icon.tres" id="4_8d37v"]
 [ext_resource type="Theme" uid="uid://d32v4ipfxwwuj" path="res://Art/Theme/MenuThemes.tres" id="5_1c3i4"]
 [ext_resource type="Texture2D" uid="uid://bi5boivo86y8h" path="res://Art/Icons/hide_icon.tres" id="5_1jkgj"]
 [ext_resource type="Texture2D" uid="uid://6x27idddx8c5" path="res://Art/Icons/gaveta_icon.tres" id="6_npanl"]
@@ -42,10 +42,12 @@ offset_right = 360.0
 offset_bottom = 35.0
 
 [node name="bt_exit" type="Button" parent="Panels/VBoxContainer2/HBoxContainer"]
-offset_right = 32.0
+custom_minimum_size = Vector2i(64, 0)
+offset_right = 64.0
 offset_bottom = 35.0
 theme = ExtResource("5_1c3i4")
-icon = ExtResource("4_avbf3")
+icon = ExtResource("4_8d37v")
+icon_alignment = 1
 
 [node name="AgencyPanel" type="HBoxContainer" parent="Panels/VBoxContainer2"]
 offset_top = 39.0

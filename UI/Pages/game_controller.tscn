@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2kvfi00qjl60"]
+[gd_scene load_steps=14 format=3 uid="uid://c2kvfi00qjl60"]
 
 [ext_resource type="Script" path="res://Code/UI/game_control.gd" id="1_77aso"]
 [ext_resource type="Texture2D" uid="uid://bqx5kc205hsex" path="res://Art/BGs/Agency_moveis_noite.png" id="2_kvirs"]
 [ext_resource type="Theme" uid="uid://byq5jq8vux0ky" path="res://Art/Theme/calendar_theme_active.tres" id="3_yox53"]
 [ext_resource type="Theme" uid="uid://d32v4ipfxwwuj" path="res://Art/Theme/MenuThemes.tres" id="4_glfmq"]
+[ext_resource type="Texture2D" uid="uid://cxq0p7r0dlhh0" path="res://Art/Icons/return_icon.tres" id="5_bcd70"]
+[ext_resource type="Texture2D" uid="uid://hjcdvue4a0wy" path="res://Art/Icons/confirm_icon.tres" id="6_l6ja6"]
 
 [sub_resource type="Animation" id="Animation_jscys"]
 length = 0.001
@@ -64,6 +66,8 @@ _data = {
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1mi6"]
 bg_color = Color(0, 0, 0, 0.498039)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cu76f"]
+
 [node name="Game" type="CanvasLayer"]
 script = ExtResource("1_77aso")
 
@@ -87,7 +91,6 @@ libraries = {
 [node name="ConfirmPanel" type="PanelContainer" parent="Tex"]
 unique_name_in_owner = true
 visible = false
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -96,11 +99,10 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_vr64l")
 
 [node name="PopPup" type="PanelContainer" parent="Tex/ConfirmPanel"]
-layout_mode = 2
 offset_left = 41.0
-offset_top = 251.0
+offset_top = 142.0
 offset_right = 318.0
-offset_bottom = 389.0
+offset_bottom = 497.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -109,9 +111,8 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_c1mi6")
 
 [node name="MarginContainer" type="MarginContainer" parent="Tex/ConfirmPanel/PopPup"]
-layout_mode = 2
 offset_right = 277.0
-offset_bottom = 138.0
+offset_bottom = 355.0
 theme_override_constants/margin_left = 6
 theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 6
@@ -119,15 +120,14 @@ theme_override_constants/margin_bottom = 6
 
 [node name="Elements" type="VBoxContainer" parent="Tex/ConfirmPanel/PopPup/MarginContainer"]
 unique_name_in_owner = true
-layout_mode = 2
 offset_left = 6.0
 offset_top = 6.0
 offset_right = 271.0
-offset_bottom = 132.0
+offset_bottom = 349.0
 mouse_filter = 2
+theme_override_constants/separation = 16
 
 [node name="Label" type="Label" parent="Tex/ConfirmPanel/PopPup/MarginContainer/Elements"]
-layout_mode = 2
 offset_right = 265.0
 offset_bottom = 20.0
 text = "DESEJA INICIAR ESSE DIA?"
@@ -136,11 +136,10 @@ text = "DESEJA INICIAR ESSE DIA?"
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2i(36, 36)
-layout_mode = 2
 offset_left = 106.0
-offset_top = 24.0
+offset_top = 36.0
 offset_right = 158.0
-offset_bottom = 78.0
+offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -150,33 +149,95 @@ theme = ExtResource("3_yox53")
 text = "10"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Tex/ConfirmPanel/PopPup/MarginContainer/Elements"]
-layout_mode = 2
-offset_left = 54.0
-offset_top = 82.0
-offset_right = 211.0
-offset_bottom = 126.0
+offset_left = 66.0
+offset_top = 106.0
+offset_right = 198.0
+offset_bottom = 170.0
 size_flags_horizontal = 4
 mouse_filter = 2
 theme = ExtResource("4_glfmq")
 
-[node name="bt_confirm" type="Button" parent="Tex/ConfirmPanel/PopPup/MarginContainer/Elements/HBoxContainer"]
-layout_mode = 2
-offset_right = 82.0
-offset_bottom = 44.0
-text = "SIM"
-
 [node name="bt_return" type="Button" parent="Tex/ConfirmPanel/PopPup/MarginContainer/Elements/HBoxContainer"]
-layout_mode = 2
-offset_left = 86.0
-offset_right = 157.0
-offset_bottom = 44.0
-text = "NAO"
+custom_minimum_size = Vector2i(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
+icon = ExtResource("5_bcd70")
+expand_icon = true
+
+[node name="bt_confirm" type="Button" parent="Tex/ConfirmPanel/PopPup/MarginContainer/Elements/HBoxContainer"]
+custom_minimum_size = Vector2i(64, 64)
+offset_left = 68.0
+offset_right = 132.0
+offset_bottom = 64.0
+icon = ExtResource("6_l6ja6")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Sep" type="HSeparator" parent="Tex/ConfirmPanel/PopPup/MarginContainer/Elements"]
+offset_top = 186.0
+offset_right = 265.0
+offset_bottom = 202.0
+theme_override_constants/separation = 16
+
+[node name="Tip" type="PanelContainer" parent="Tex/ConfirmPanel/PopPup/MarginContainer/Elements"]
+unique_name_in_owner = true
+offset_top = 218.0
+offset_right = 265.0
+offset_bottom = 218.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cu76f")
+
+[node name="Sep2" type="HSeparator" parent="Tex/ConfirmPanel/PopPup/MarginContainer/Elements"]
+offset_top = 234.0
+offset_right = 265.0
+offset_bottom = 250.0
+theme_override_constants/separation = 16
 
 [node name="Label2" type="Label" parent="Tex/ConfirmPanel/PopPup/MarginContainer/Elements"]
-layout_mode = 2
-offset_right = 267.0
-offset_bottom = 20.0
-text = "-------------------------"
+offset_top = 266.0
+offset_right = 265.0
+offset_bottom = 281.0
+theme_override_font_sizes/font_size = 12
+text = "recordes"
+horizontal_alignment = 1
 
-[connection signal="button_up" from="Tex/ConfirmPanel/PopPup/MarginContainer/Elements/HBoxContainer/bt_confirm" to="." method="_on_bt_confirm_button_up"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Tex/ConfirmPanel/PopPup/MarginContainer/Elements"]
+offset_top = 297.0
+offset_right = 265.0
+offset_bottom = 312.0
+
+[node name="Label" type="Label" parent="Tex/ConfirmPanel/PopPup/MarginContainer/Elements/HBoxContainer2"]
+offset_right = 42.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 12
+text = "stress:"
+
+[node name="stressbar" type="ProgressBar" parent="Tex/ConfirmPanel/PopPup/MarginContainer/Elements/HBoxContainer2"]
+unique_name_in_owner = true
+visible = false
+offset_left = 46.0
+offset_right = 265.0
+offset_bottom = 21.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Tex/ConfirmPanel/PopPup/MarginContainer/Elements"]
+offset_top = 328.0
+offset_right = 265.0
+offset_bottom = 343.0
+
+[node name="Label" type="Label" parent="Tex/ConfirmPanel/PopPup/MarginContainer/Elements/HBoxContainer3"]
+offset_right = 47.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 12
+text = "tempo:"
+
+[node name="time" type="Label" parent="Tex/ConfirmPanel/PopPup/MarginContainer/Elements/HBoxContainer3"]
+unique_name_in_owner = true
+visible = false
+offset_left = 51.0
+offset_right = 96.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 12
+text = "00:00"
+
 [connection signal="button_up" from="Tex/ConfirmPanel/PopPup/MarginContainer/Elements/HBoxContainer/bt_return" to="." method="_on_bt_return_button_up"]
+[connection signal="button_up" from="Tex/ConfirmPanel/PopPup/MarginContainer/Elements/HBoxContainer/bt_confirm" to="." method="_on_bt_confirm_button_up"]

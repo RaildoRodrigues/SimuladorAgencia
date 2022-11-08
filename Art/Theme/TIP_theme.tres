@@ -1,7 +1,14 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bckdptaaiibn"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bckdptaaiibn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uk6l3"]
-bg_color = Color(1, 1, 1, 0.47451)
+[ext_resource type="Texture2D" uid="uid://d1bobcqthhpp0" path="res://Art/UI/atlas_ui.png" id="1_qfeul"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v7tuj"]
+texture = ExtResource("1_qfeul")
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 3.0
+margin_bottom = 3.0
+region_rect = Rect2(128, 128, 64, 64)
 
 [resource]
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_uk6l3")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_v7tuj")

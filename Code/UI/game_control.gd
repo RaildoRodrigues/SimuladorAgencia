@@ -3,15 +3,37 @@ extends CanvasLayer
 
 var level_data : Dictionary = {pool = [], gaveta = [], interval = 10}
 var tip
+var level_name = 0
+var level_stress = 0
+var level_time = 0
+var level_tip = ''
+var scores = {}
 
-func show_confirm(level_name, level_tip = ''):
+
+
+func show_confirm():
+	update_records()
 	%lb_day.text = level_name
-	var old_tip = get_node("Tex/ConfirmPanel/PopPup/MarginContainer/Elements/Tip")
-	if old_tip : old_tip.queue_free()
+	for child in %Tip.get_children():
+		child.queue_free()
 	if level_tip != '':
 		tip = load(level_tip)
 		tip = tip.instantiate()
-		%Elements.add_child(tip)
+		%Tip.add_child(tip)
+
+func update_records():
+	if scores.has(level_name):
+		%stressbar.visible = true
+		%stressbar.value = scores[level_name].stress
+		%time.visible = true
+		var minutes = (scores[level_name].time / 60) % 60
+		var seconds = scores[level_name].time % 60
+		var time = "%02d:%02d" % [minutes, seconds]
+		%time.text = time
+	else:
+		%time.visible = false
+		%stressbar.visible = false
+
 
 func change_to_menu(menu : String):
 	%ConfirmPanel.visible = false
