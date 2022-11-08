@@ -1,6 +1,6 @@
 0b7126e0c6e86d3ec295a72f5aa6e0bd
-::res://::1667932379
-default_bus_layout.tres::AudioBusLayout::5442793890416713438::1667926761::0::1::::<><>::
+::res://::1667933484
+default_bus_layout.tres::AudioBusLayout::5442793890416713438::1667932959::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1667598558::0::1::::<><>::
 icon.svg::CompressedTexture2D::2541665657219172975::1666720362::1666720370::1::::<><>::
 ::res://Art/::1667570649
@@ -38,23 +38,23 @@ cedula_20.tres::AtlasTexture::7488082494986274006::1667159558::0::1::::<><>::uid
 cedula_50.tres::AtlasTexture::6763443266032584838::1667867033::0::1::::<><>::uid://nsnt4vuiuvd5
 cedula_100.tres::AtlasTexture::6360350164697849976::1667867019::0::1::::<><>::uid://nsnt4vuiuvd5
 cedula_200.tres::AtlasTexture::8443804524580911732::1667480655::0::1::::<><>::uid://nsnt4vuiuvd5
-::res://Art/Theme/::1667930732
-button_togles.tres::Theme::4936145492998487301::1667929690::0::1::::<><>::uid://d1bobcqthhpp0
-calendar_theme_active.tres::Theme::4105821449332924584::1667930732::0::1::::<><>::uid://d1bobcqthhpp0
+::res://Art/Theme/::1667932841
+button_togles.tres::Theme::4936145492998487301::1667932392::0::1::::<><>::uid://d1bobcqthhpp0
+calendar_theme_active.tres::Theme::4105821449332924584::1667932392::0::1::::<><>::uid://d1bobcqthhpp0
 client_DOC.theme::Theme::8247097072412843338::1667859095::0::1::::<><>::uid://d1bobcqthhpp0
 client_PAP.theme::Theme::8247097072412843338::1667909670::0::1::::<><>::uid://d1bobcqthhpp0
 client_RG.theme::Theme::8247097072412843338::1667309056::0::1::::<><>::uid://d1bobcqthhpp0
 gaveta_panel.theme::Theme::5475724021847748901::1667859095::0::1::::<><>::uid://d1bobcqthhpp0
 gaveta_slot.theme::Theme::2969581884618331367::1667859095::0::1::::<><>::uid://d1bobcqthhpp0
-hidden_button.tres::Theme::6054147507933934417::1667929690::0::1::::<><>::
+hidden_button.tres::Theme::6054147507933934417::1667932392::0::1::::<><>::
 level_select_themes.tres::Theme::3702497127808803320::1667822186::0::1::::<><>::uid://d1bobcqthhpp0
-MenuThemes.tres::Theme::9181615160792832649::1667929690::0::1::::<><>::uid://d1bobcqthhpp0
+MenuThemes.tres::Theme::9181615160792832649::1667932392::0::1::::<><>::uid://d1bobcqthhpp0
 pixelartgameagency.theme::Theme::2300940491231359952::1667576729::0::1::::<><>::uid://b2dmsxcf63dg0<>uid://d1bobcqthhpp0
-TIP_theme.tres::Theme::74930943657391055::1667927183::0::1::::<><>::uid://d1bobcqthhpp0
+TIP_theme.tres::Theme::74930943657391055::1667932841::0::1::::<><>::uid://d1bobcqthhpp0
 ::res://Art/UI/::1667909415
 atlas_ui.png::CompressedTexture2D::8987088317751331675::1667869237::1667909415::1::::<><>::
-::res://Code/::1667932023
-sfx_player.tscn::PackedScene::8949777975967743448::1667932023::0::1::::<><>::res://Code/UI/sfx_player.gd<>uid://hhnqu3j4lu80<>uid://d3oj2nti7pc68<>uid://ncf62rftysi4<>uid://d105v50j4t1q5<>uid://cv8fp78jts28j<>uid://lbxmw8u8a7eo<>uid://cmx3b55x4htx7<>uid://bpfnsanhbpqkq<>uid://cca2ur5bnhlyy<>uid://3p7mbkighhg2
+::res://Code/::1667933028
+sfx_player.tscn::PackedScene::8949777975967743448::1667933028::0::1::::<><>::res://Code/UI/sfx_player.gd<>uid://hhnqu3j4lu80<>uid://d3oj2nti7pc68<>uid://ncf62rftysi4<>uid://d105v50j4t1q5<>uid://cv8fp78jts28j<>uid://lbxmw8u8a7eo<>uid://cmx3b55x4htx7<>uid://bpfnsanhbpqkq<>uid://cca2ur5bnhlyy<>uid://3p7mbkighhg2
 ::res://Code/Resources/::1666963029
 ::res://Code/Resources/Database/::1667867156
 cedula_cem.tres::Resource::701693908860613651::1667867156::0::1::::<><>::res://Code/Resources/Prefabs/item.gd<>uid://cwvabj40ako5u
@@ -67,7 +67,7 @@ cedula_vin.tres::Resource::1374955610561029037::1667859095::0::1::::<><>::res://
 ::res://Code/Resources/Prefabs/::1667482766
 item.gd::GDScript::-1::1667482766::0::1::::Item<>Resource<>::
 item.tres::Resource::5978605390181178992::1666986844::0::1::::<><>::res://Code/Resources/Prefabs/item.gd
-::res://Code/UI/::1667931898
+::res://Code/UI/::1667932730
 client_control.gd::GDScript::-1::1667931898::0::1::::<>Control<>::
 client_panel.gd::GDScript::-1::1667915825::0::1::::<>PanelContainer<>::
 defeat_screen.gd::GDScript::-1::1667927239::0::1::::<>Control<>::
@@ -84,10 +84,10 @@ money_slot.gd::GDScript::-1::1667931708::0::1::::<>ItemContainer<>::
 new_level.gd::GDScript::-1::1667859754::0::1::::<>CanvasLayer<>::
 panels_control.gd::GDScript::-1::1667930831::0::1::::<>MarginContainer<>::
 sfx_player.gd::GDScript::-1::1667931834::0::1::::<>Node<>::
-stress_ometer.gd::GDScript::-1::1667917842::0::1::::<>ProgressBar<>::
+stress_ometer.gd::GDScript::-1::1667932730::0::1::::<>ProgressBar<>::
 transition.gd::GDScript::-1::1667844968::0::1::::<>CanvasLayer<>::
 victory_screen.gd::GDScript::-1::1667927204::0::1::::<>Control<>::
-::res://SFX/::1667932347
+::res://SFX/::1667932380
 click.wav::AudioStreamWAV::2175137662010397003::1667925242::1667926640::1::::<><>::
 drag (1).mp3::AudioStreamMP3::506591537522743187::1667929006::1667929124::1::::<><>::
 drag (2).mp3::AudioStreamMP3::775560785577997030::1667929006::1667929124::1::::<><>::
@@ -101,20 +101,20 @@ zombie (1).ogg::AudioStreamOggVorbis::5664291664106034658::1667925746::166792883
 zombie (2).ogg::AudioStreamOggVorbis::3450396712632587980::1667925746::1667928838::1::::<><>::
 zombie (3).ogg::AudioStreamOggVorbis::4914895068649240732::1667925746::1667928838::1::::<><>::
 zombie (4).ogg::AudioStreamOggVorbis::1998217729814368155::1667925746::1667928838::1::::<><>::
-::res://SFX/CoinDrops/::1667932072
+::res://SFX/CoinDrops/::1667932379
 drag (1).mp3::AudioStreamMP3::8169707987380235771::1667929006::1667932379::1::::<><>::
 drag (2).mp3::AudioStreamMP3::1097947060099341527::1667929006::1667932379::1::::<><>::
 drop (1).mp3::AudioStreamMP3::2699324319448939562::1667929006::1667932379::1::::<><>::
 drop (2).mp3::AudioStreamMP3::169107236445530575::1667929007::1667932379::1::::<><>::
 drop (3).mp3::AudioStreamMP3::4167642705033504717::1667929007::1667932379::1::::<><>::
 drop (4).mp3::AudioStreamMP3::5001385054272352058::1667929007::1667932379::1::::<><>::
-::res://SFX/PapperDrops/::1667932352
+::res://SFX/PapperDrops/::1667932379
 drop (1).mp3::AudioStreamMP3::2288851641602812102::1667932324::1667932379::1::::<><>::
 drop (2).mp3::AudioStreamMP3::2331687341585466157::1667932324::1667932379::1::::<><>::
 drop (3).mp3::AudioStreamMP3::4626982731774775523::1667932324::1667932379::1::::<><>::
 drop (4).mp3::AudioStreamMP3::6386813974876233887::1667932324::1667932379::1::::<><>::
 ::res://UI/::1667866438
-::res://UI/Elements/::1667931976
+::res://UI/Elements/::1667932730
 client_button.tscn::PackedScene::3917669469234833075::1667931976::0::1::::<><>::uid://dpq7qpl5pwq8i<>res://Code/UI/client_control.gd<>uid://b4eevwghux1yt<>uid://bikuvj8x6rojn<>uid://csiw6phueu4uv<>uid://d1bobcqthhpp0<>uid://d0rlshitrapx5
 client_panel.tscn::PackedScene::6328405296942917059::1667862430::0::1::::<><>::res://Code/UI/client_panel.gd
 drag_preview.tscn::PackedScene::1808280298585057257::1667931976::0::1::::<><>::res://Code/UI/drag_preview.gd
@@ -124,14 +124,14 @@ level_select.tscn::PackedScene::9149179841527965314::1667912639::0::1::::<><>::u
 money_slot.tscn::PackedScene::5696086039085867067::1667931976::0::1::::<><>::uid://bikqtyhuv3jgh<>res://Code/UI/money_slot.gd<>uid://csiw6phueu4uv<>uid://d0rlshitrapx5
 product_slot.tscn::PackedScene::5312672509312325807::1667162043::0::1::::<><>::
 services_button_group.tres::ButtonGroup::3720279761319655870::1667579409::0::1::::<><>::
-stress_ometer.tscn::PackedScene::8446290664992316438::1667918991::0::1::::<><>::res://Code/UI/stress_ometer.gd<>uid://d1bobcqthhpp0
-::res://UI/Pages/::1667931976
-defeat_screen.tscn::PackedScene::71599334175609164::1667927248::0::1::::<><>::uid://bckdptaaiibn<>uid://culjxl0xdk7bi<>res://Code/UI/defeat_screen.gd<>uid://byq5jq8vux0ky<>uid://d32v4ipfxwwuj<>uid://cxq0p7r0dlhh0<>uid://58wg1vhlku4b
-game_controller.tscn::PackedScene::6689868368935840523::1667927105::0::1::::<><>::res://Code/UI/game_control.gd<>uid://bqx5kc205hsex<>uid://byq5jq8vux0ky<>uid://d32v4ipfxwwuj<>uid://cxq0p7r0dlhh0<>uid://hjcdvue4a0wy<>uid://58wg1vhlku4b
-level_menu.tscn::PackedScene::2824437969752872720::1667927105::0::1::::<><>::uid://d32v4ipfxwwuj<>res://Code/UI/level_menu.gd<>uid://bqx5kc205hsex<>uid://d3l6wjrbwts4i<>uid://cxq0p7r0dlhh0<>uid://58wg1vhlku4b
-MainUI.tscn::PackedScene::8613015312245945319::1667931976::0::1::::<><>::uid://ctbo4x1hk7aud<>uid://culjxl0xdk7bi<>res://Code/UI/panels_control.gd<>uid://chxq67xhtbuah<>uid://cwfr57yfemtfn<>uid://dslpf5i1ykwfe<>uid://cxq0p7r0dlhh0<>uid://d32v4ipfxwwuj<>uid://bi5boivo86y8h<>uid://6x27idddx8c5<>uid://cclduh6n6rtr6<>uid://btaep1sevxhes<>uid://ckg7372s7ik5y<>uid://13vgh72kjful<>uid://ba43xj384n843<>uid://58wg1vhlku4b
-start_menu.tscn::PackedScene::8171343444946586455::1667931975::0::1::::<><>::uid://d32v4ipfxwwuj<>res://Code/UI/main_menu.gd<>uid://bqx5kc205hsex<>uid://58wg1vhlku4b
-victory_screen.tscn::PackedScene::1980436471738107384::1667927213::0::1::::<><>::uid://bckdptaaiibn<>uid://culjxl0xdk7bi<>res://Code/UI/victory_screen.gd<>uid://byq5jq8vux0ky<>uid://d32v4ipfxwwuj<>uid://cxq0p7r0dlhh0<>uid://58wg1vhlku4b
+stress_ometer.tscn::PackedScene::8446290664992316438::1667932730::0::1::::<><>::res://Code/UI/stress_ometer.gd<>uid://d1bobcqthhpp0<>uid://bwovkcr8tv75r
+::res://UI/Pages/::1667932841
+defeat_screen.tscn::PackedScene::71599334175609164::1667932801::0::1::::<><>::uid://bckdptaaiibn<>uid://culjxl0xdk7bi<>res://Code/UI/defeat_screen.gd<>uid://byq5jq8vux0ky<>uid://d32v4ipfxwwuj<>uid://cxq0p7r0dlhh0<>uid://58wg1vhlku4b
+game_controller.tscn::PackedScene::6689868368935840523::1667932812::0::1::::<><>::res://Code/UI/game_control.gd<>uid://bqx5kc205hsex<>uid://byq5jq8vux0ky<>uid://d32v4ipfxwwuj<>uid://cxq0p7r0dlhh0<>uid://hjcdvue4a0wy<>uid://58wg1vhlku4b
+level_menu.tscn::PackedScene::2824437969752872720::1667932821::0::1::::<><>::uid://d32v4ipfxwwuj<>res://Code/UI/level_menu.gd<>uid://bqx5kc205hsex<>uid://d3l6wjrbwts4i<>uid://cxq0p7r0dlhh0<>uid://58wg1vhlku4b
+MainUI.tscn::PackedScene::8613015312245945319::1667932829::0::1::::<><>::uid://ctbo4x1hk7aud<>uid://culjxl0xdk7bi<>res://Code/UI/panels_control.gd<>uid://chxq67xhtbuah<>uid://cwfr57yfemtfn<>uid://dslpf5i1ykwfe<>uid://cxq0p7r0dlhh0<>uid://d32v4ipfxwwuj<>uid://bi5boivo86y8h<>uid://6x27idddx8c5<>uid://cclduh6n6rtr6<>uid://btaep1sevxhes<>uid://ckg7372s7ik5y<>uid://13vgh72kjful<>uid://ba43xj384n843<>uid://58wg1vhlku4b
+start_menu.tscn::PackedScene::8171343444946586455::1667932836::0::1::::<><>::uid://d32v4ipfxwwuj<>res://Code/UI/main_menu.gd<>uid://bqx5kc205hsex<>uid://58wg1vhlku4b
+victory_screen.tscn::PackedScene::1980436471738107384::1667932841::0::1::::<><>::uid://bckdptaaiibn<>uid://culjxl0xdk7bi<>res://Code/UI/victory_screen.gd<>uid://byq5jq8vux0ky<>uid://d32v4ipfxwwuj<>uid://cxq0p7r0dlhh0<>uid://58wg1vhlku4b
 ::res://UI/Tips/::1667912265
 level_01.tscn::PackedScene::2847525812634623931::1667911885::0::1::::<><>::uid://bckdptaaiibn<>uid://prlomq5ee7oq<>uid://bikqtyhuv3jgh<>uid://csiw6phueu4uv<>uid://b4eevwghux1yt<>uid://bikuvj8x6rojn<>uid://d1bobcqthhpp0<>uid://cwvabj40ako5u
 level_02.tscn::PackedScene::5503410667596812192::1667912265::0::1::::<><>::uid://bckdptaaiibn<>uid://prlomq5ee7oq<>uid://bikqtyhuv3jgh<>uid://csiw6phueu4uv<>uid://c3mi6mlt7mpcg<>uid://b4eevwghux1yt<>uid://bikuvj8x6rojn<>uid://dicsx060wcl1l<>uid://d1bobcqthhpp0<>uid://bmbs618ji7c40<>uid://cwvabj40ako5u

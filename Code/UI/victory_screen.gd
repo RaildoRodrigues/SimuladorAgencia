@@ -7,6 +7,7 @@ func _ready() -> void:
 	update_stress_bar()
 	update_time_label()
 	update_score()
+	Game.save_game()
 
 
 func update_score():

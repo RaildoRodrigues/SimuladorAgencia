@@ -9,6 +9,20 @@ var level_time = 0
 var level_tip = ''
 var scores = {}
 
+const save_path = 'user://hellagencysave.dat'
+
+func save_game():
+	var file := FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_var(scores)
+
+func load_game():
+	var file := FileAccess.open(save_path, FileAccess.READ)
+	if file:
+		scores = file.get_var()
+
+
+func _ready() -> void:
+	load_game()
 
 
 func show_confirm():
@@ -52,9 +66,6 @@ func change_to_level(_pool, _gaveta, _interval):
 	var anim = get_node("Tex/Anim")
 	anim.play('fadein')
 	%ConfirmPanel.visible = true
-	
-
-
 
 func _on_bt_confirm_button_up() -> void:
 	%SFX.play()

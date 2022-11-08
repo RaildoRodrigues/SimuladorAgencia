@@ -24,7 +24,7 @@ func level_button_01():
 	var level_pool = []
 	var basic_client = {}
 	basic_client.category = 'deposit'
-	for i in range(2):
+	for i in range(6):
 		basic_client.value = generate_random_wallet('easy')
 		level_pool.append(basic_client.duplicate())
 	Game.level_name = '01'
@@ -35,7 +35,7 @@ func level_button_02():
 	var level_pool = []
 	var basic_client = {}
 	basic_client.category = 'deposit'
-	for i in range(2):
+	for i in range(8):
 		basic_client.value = generate_random_wallet('normal')
 		level_pool.append(basic_client.duplicate())
 	Game.level_name = '02'

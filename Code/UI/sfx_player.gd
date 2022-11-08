@@ -6,7 +6,6 @@ func play_drag_sound():
 	var drag_sounds = [%SFX_drag1, %SFX_drag2]
 	var selected_sound = drag_sounds[randi_range(0,1)]
 	selected_sound.play()
-	
 
 func play_drop_sound():
 	var drag_sounds = [%SFX_drop1, %SFX_drop2,%SFX_drop3,%SFX_drop4]
