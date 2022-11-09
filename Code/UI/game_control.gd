@@ -8,6 +8,8 @@ var level_stress = 0
 var level_time = 0
 var level_tip = ''
 var scores = {}
+var clients = 0
+
 
 const save_path = 'user://hellagencysave.dat'
 

@@ -224,9 +224,9 @@ theme_override_constants/separation = 16
 alignment = 1
 
 [node name="bt_hide_gaveta" type="Button" parent="Panels/VBoxContainer2/AgencyPanel/ServiceButtons/MarginContainer/VBoxContainer"]
-offset_top = 60.0
+offset_top = 111.0
 offset_right = 32.0
-offset_bottom = 95.0
+offset_bottom = 146.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
@@ -236,6 +236,7 @@ icon = ExtResource("6_npanl")
 icon_alignment = 1
 
 [node name="bt_service_2" type="Button" parent="Panels/VBoxContainer2/AgencyPanel/ServiceButtons/MarginContainer/VBoxContainer"]
+visible = false
 offset_top = 111.0
 offset_right = 32.0
 offset_bottom = 146.0
@@ -248,9 +249,10 @@ icon = ExtResource("9_7sgod")
 icon_alignment = 1
 
 [node name="bt_service_3" type="Button" parent="Panels/VBoxContainer2/AgencyPanel/ServiceButtons/MarginContainer/VBoxContainer"]
-offset_top = 162.0
+visible = false
+offset_top = 136.0
 offset_right = 32.0
-offset_bottom = 197.0
+offset_bottom = 171.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 disabled = true
@@ -260,9 +262,9 @@ icon = ExtResource("9_7sgod")
 icon_alignment = 1
 
 [node name="bt_service_4" type="Button" parent="Panels/VBoxContainer2/AgencyPanel/ServiceButtons/MarginContainer/VBoxContainer"]
-offset_top = 213.0
+offset_top = 162.0
 offset_right = 32.0
-offset_bottom = 248.0
+offset_bottom = 197.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true

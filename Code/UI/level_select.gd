@@ -3,7 +3,6 @@ extends PanelContainer
 
 
 func _ready() -> void:
-	print(Game.scores)
 	for level in %LevelGrid.get_children():
 		var level_name = "%02d" % (level.get_index() + 1)
 		var level_method = 'level_button_'  + level_name
@@ -163,6 +162,10 @@ func level_button_12():
 	Game.level_name = '12'
 	Game.level_tip = ""
 	go_to_level(level_pool)
+
+
+
+
 
 
 

@@ -1,3 +1,4 @@
+VBoxContainer
 Label
 TextureRect
 Node
@@ -6,7 +7,6 @@ HSeparator
 Button
 HBoxContainer
 ProgressBar
-VBoxContainer
 MarginContainer
 PanelContainer
 AnimationPlayer

@@ -11,6 +11,7 @@ func _ready() -> void:
 
 
 func update_score():
+	
 	if Game.scores.has(Game.level_name):
 		if Game.scores[Game.level_name].time >= Game.level_time:
 			print('new time record')

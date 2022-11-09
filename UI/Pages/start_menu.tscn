@@ -265,12 +265,14 @@ grow_vertical = 2
 alignment = 1
 
 [node name="bt_start" type="Button" parent="TextureRect/CenterContainer/MarginContainer/VBoxContainer"]
+offset_top = 24.0
 offset_right = 163.0
-offset_bottom = 44.0
+offset_bottom = 68.0
 focus_neighbor_top = NodePath("../bt_exit")
 text = "Iniciar"
 
 [node name="bt_tutorial" type="Button" parent="TextureRect/CenterContainer/MarginContainer/VBoxContainer"]
+visible = false
 offset_top = 48.0
 offset_right = 163.0
 offset_bottom = 92.0
@@ -278,16 +280,15 @@ disabled = true
 text = "Tutorial"
 
 [node name="bt_survival" type="Button" parent="TextureRect/CenterContainer/MarginContainer/VBoxContainer"]
-offset_top = 96.0
+offset_top = 72.0
 offset_right = 163.0
-offset_bottom = 140.0
-disabled = true
+offset_bottom = 116.0
 text = "Survival"
 
 [node name="bt_exit" type="Button" parent="TextureRect/CenterContainer/MarginContainer/VBoxContainer"]
-offset_top = 144.0
+offset_top = 120.0
 offset_right = 163.0
-offset_bottom = 188.0
+offset_bottom = 164.0
 focus_neighbor_bottom = NodePath("../bt_start")
 text = "Sair"
 
@@ -324,4 +325,5 @@ text = "by: raildogameart"
 horizontal_alignment = 1
 
 [connection signal="button_up" from="TextureRect/CenterContainer/MarginContainer/VBoxContainer/bt_start" to="." method="_on_bt_start_button_up"]
+[connection signal="button_up" from="TextureRect/CenterContainer/MarginContainer/VBoxContainer/bt_survival" to="." method="_on_bt_survival_button_up"]
 [connection signal="button_up" from="TextureRect/CenterContainer/MarginContainer/VBoxContainer/bt_exit" to="." method="_on_bt_exit_button_up"]

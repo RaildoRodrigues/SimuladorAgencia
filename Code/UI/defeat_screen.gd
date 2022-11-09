@@ -6,7 +6,16 @@ func _ready() -> void:
 	update_level_icon()
 	update_stress_bar()
 	update_time_label()
+	survival_things()
 
+
+
+func survival_things():
+	if Game.level_name == 'survival':
+		%ClientCount.visible = true
+		%lb_client_text.text = str(Game.clients) + ' clientes'
+	else:
+		%ClientCount.visible = false
 
 func update_time_label():
 	var minutes = (Game.level_time / 60) % 60
