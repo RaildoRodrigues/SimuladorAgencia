@@ -32,12 +32,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="HellAgency"
+config/name="AgencySimulator"
 run/main_scene="res://UI/Pages/start_menu.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 run/max_fps=60
+boot_splash/image="res://Art/Promo/Logo.png"
 boot_splash/bg_color=Color(0.894118, 0.823529, 0.666667, 1)
-config/icon="res://icon.svg"
+config/icon="res://Art/Promo/icon.png"
 
 [autoload]
 
@@ -52,6 +53,10 @@ window/size/window_height_override=960
 window/handheld/orientation=1
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor]
+
+movie_writer/movie_file="C:/Godot/Godot Projects/SimuladorAgencia/Delete/lastgameplay.avi"
 
 [gui]
 

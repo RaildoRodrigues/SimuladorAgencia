@@ -1,12 +1,8 @@
-res://UI/Tips/level_03.tscn
+res://Code/sfx_player.tscn
 res://Art/Theme/hidden_button.tres
 res://Art/Theme/MenuThemes.tres
 res://Art/Theme/button_togles.tres
 res://Art/Theme/calendar_theme_active.tres
-res://Art/Theme/TIP_theme.tres
-res://Code/UI/level_select.gd
-res://Code/sfx_player.tscn
-res://UI/Tips/level_05.tscn
-res://UI/Tips/level_06.tscn
-res://UI/Tips/level_09.tscn
-res://UI/Tips/level_02.tscn
+res://UI/Pages/MainUI.tscn
+res://UI/Pages/start_menu.tscn
+res://UI/Pages/level_menu.tscn

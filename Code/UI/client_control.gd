@@ -8,6 +8,27 @@ var frames = {'doc' : preload("res://Art/Theme/client_DOC.theme"),
 				'rg': preload("res://Art/Theme/client_RG.theme"),
 				'papper' : preload("res://Art/Theme/client_PAP.theme")}
 
+var old_avatars = {1 : preload("res://Art/Avatars/avatar_01.tres"),
+					2: preload("res://Art/Avatars/avatar_02.tres"),
+					3: preload("res://Art/Avatars/avatar_03.tres"),
+					4: preload("res://Art/Avatars/avatar_04.tres"),
+					5: preload("res://Art/Avatars/avatar_05.tres"),
+					6: preload("res://Art/Avatars/avatar_06.tres"),
+					7: preload("res://Art/Avatars/avatar_07.tres"),
+					8: preload("res://Art/Avatars/avatar_08.tres"),
+					9: preload("res://Art/Avatars/avatar_09.tres"),
+					10: preload("res://Art/Avatars/avatar_10.tres"),
+					11: preload("res://Art/Avatars/avatar_11.tres"),
+					12: preload("res://Art/Avatars/avatar_12.tres"),
+					13: preload("res://Art/Avatars/avatar_13.tres"),
+					14: preload("res://Art/Avatars/avatar_14.tres"),
+					15: preload("res://Art/Avatars/avatar_15.tres"),
+					16: preload("res://Art/Avatars/avatar_16.tres"),
+					17: preload("res://Art/Avatars/avatar_17.tres"),
+					18: preload("res://Art/Avatars/avatar_18.tres"),
+					}
+
+
 
 #editables
 var category = 'random'
@@ -128,6 +149,10 @@ func bank_client_deposit_setup():
 	can_pick_money = true
 	#setup icon
 	%tex_icon.texture = deposit_icon
+	#setupavatar
+	if potrait == 'generate':
+		potrait = old_avatars[randi_range(1,18)]
+	%tex_avatar.texture = potrait
 	#setup value
 	money = value.duplicate()
 	update_money_display()
@@ -198,6 +223,10 @@ func update_money_display():
 func bank_client_withdraw_setup():
 	#setup icon
 	%tex_icon.texture = withdraw_icon
+	#setupavatar
+	if potrait == 'generate':
+		potrait = old_avatars[randi_range(1,18)]
+	%tex_avatar.texture = potrait
 	#setup value
 	can_drop_money = true
 	money = value.duplicate()
