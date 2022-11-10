@@ -131,6 +131,7 @@ func call_event():
 
 
 func exit_agency():
+	Game.clients += 1
 	var final_color = Color.TRANSPARENT
 	modulate = Color.WHITE 
 	var anim_tween = create_tween()

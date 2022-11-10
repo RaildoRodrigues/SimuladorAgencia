@@ -10,5 +10,6 @@ func stress(amount : float = 5.0):
 	%Anim.play('redAlert')
 	%SFX.play()
 	if value >= 100:
+		Game.level_stress = value
 		Game.change_to_menu("res://UI/Pages/defeat_screen.tscn")
 

@@ -14,6 +14,7 @@ var spawn_interval = 10.0
 func _ready() -> void:
 	Game.level_time = 0
 	Game.level_stress = 0
+	Game.clients = 0
 	start_level()
 
 
@@ -46,7 +47,6 @@ func _on_victory_timer_timeout() -> void:
 	if client_pool.is_empty() and %ClientsGrid.get_child_count() == 0:
 		var stress_ometer = get_tree().get_first_node_in_group('main_stress_bar')
 		Game.level_stress = stress_ometer.value
-		Game.clients = dispached_clients
 		Game.change_to_menu("res://UI/Pages/victory_screen.tscn")
 	else:
 		Game.level_time += 1
@@ -56,7 +56,6 @@ func _on_victory_timer_timeout() -> void:
 func spawn_client():
 	var new_client = client_pool.pop_back()
 	if new_client:
-		dispached_clients += 1
 		create_client(new_client)
 		%SpawnTimer.start(spawn_interval)
 
